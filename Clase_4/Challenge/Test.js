@@ -24,7 +24,7 @@ const object3 = {
 }
 
 // document.save(object2)
-// document.getById(2)
+// document.getById(1)
 // document.getAll()
 // document.deleteById(2)
-document.deleteAll()
+// document.deleteAll()

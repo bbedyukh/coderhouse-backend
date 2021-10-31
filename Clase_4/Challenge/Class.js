@@ -10,7 +10,17 @@ class Container {
         fs.readFile(this.name, 'utf-8', (err, result) => {
             try {
                 if (!object) throw new Error(`Missing 'object' parameter!`)
-                if (err) throw new Error(`Read error: ${err}`)
+                if (err) {
+                    if (err.message.includes('no such file or directory')) {
+                        console.error(err.message)
+                        console.log(
+                            `The file has been created because it does not exist.`
+                        )
+                        fs.writeFileSync(this.name, '')
+                    } else {
+                        throw new Error(`Read error: ${err}`)
+                    }
+                }
 
                 console.log(`Read from file ${this.name} successful!`)
 
@@ -50,8 +60,8 @@ class Container {
 
                 let currentArr = !result ? '' : JSON.parse(result)
                 if (!currentArr) throw new Error(`The document is empty!`)
-                let data = currentArr.filter(e => e.id === id)
-                if (data.length > 0) return console.log(data)
+                let data = currentArr.find(e => e.id === id)
+                if (data) return console.log(data)
                 else return console.log('null')
             } catch (err) {
                 console.error(err)
