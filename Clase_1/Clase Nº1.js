@@ -1,9 +1,9 @@
 class User {
-    constructor(firstname, lastname, books, pets) {
+    constructor(firstname, lastname) {
         this.firstname = firstname
         this.lastname = lastname
-        this.books = books
-        this.pets = pets
+        this.books = []
+        this.pets = []
     }
 
     getFullName() {
@@ -23,11 +23,11 @@ class User {
     }
 
     getBooksNames() {
-        return this.books.map(books => books.name)
+        return this.books.map(book => book.name)
     }
 }
 
-const user = new User('Bogdan', 'Bedyukh', [], ['Dakota'])
+const user = new User('Bogdan', 'Bedyukh')
 
 console.log(user.getFullName())
 

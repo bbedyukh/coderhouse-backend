@@ -1,0 +1,24 @@
+{
+  "resultString": "{\n  \"name\": \"backend\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"git+https://github.com/bbedyukh/coderhouse-backend.git\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"bugs\": {\n    \"url\": \"https://github.com/bbedyukh/coderhouse-backend/issues\"\n  },\n  \"homepage\": \"https://github.com/bbedyukh/coderhouse-backend#readme\"\n}\n",
+  "resultObj": {
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/bbedyukh/coderhouse-backend.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/bbedyukh/coderhouse-backend/issues"
+    },
+    "homepage": "https://github.com/bbedyukh/coderhouse-backend#readme"
+  },
+  "size": 486
+}
