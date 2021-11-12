@@ -1,33 +1,33 @@
 const moment = require('moment')
 class Dates {
-    constructor(birthDay) {
-        this.birthDay = birthDay
-        this.today = moment()
-    }
+  constructor (birthDay) {
+    this.birthDay = birthDay
+    this.today = moment()
+  }
 
-    getToday() {
-        return this.today.format('L')
-    }
+  getToday () {
+    return this.today.format('L')
+  }
 
-    getMyBirth() {
-        return this.birthDay
-    }
+  getMyBirth () {
+    return this.birthDay
+  }
 
-    diffYears() {
-        return this.today.diff(this.birthDay, 'year', true)
-    }
+  diffYears () {
+    return this.today.diff(this.birthDay, 'year', true)
+  }
 
-    diffDays() {
-        return this.today.diff(this.birthDay, 'days', true)
-    }
+  diffDays () {
+    return this.today.diff(this.birthDay, 'days', true)
+  }
 
-    diffTime(time) {
-        return this.today.diff(this.birthDay, time, true)
-    }
+  diffTime (time) {
+    return this.today.diff(this.birthDay, time, true)
+  }
 }
 
 const birthDay = moment('12/02/1995', 'DD/MM/YYYY')
-let Date = new Dates(birthDay)
+const Date = new Dates(birthDay)
 
 console.log(Date.getToday())
 console.log(Date.getMyBirth())
