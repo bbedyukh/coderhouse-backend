@@ -1,6 +1,6 @@
-const fs = require('fs')
+import fs from 'fs'
 
-class FileManager {
+export default class FileManager {
   constructor () {
     this.fileLocation = 'src/files/products.json'
   }
@@ -50,7 +50,7 @@ class FileManager {
       product.id = id
       products = [...products, product]
 
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(products))
+      await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
       return { status: 'success', payload: product }
     } catch (err) {
       console.log(`Save file error: ${err.message}`)
@@ -78,7 +78,7 @@ class FileManager {
       }
 
       products = [...products, newProduct]
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(products))
+      await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
       return { status: 'success', message: 'Product updated successfully.' }
     } catch (err) {
       console.log(`Save file error: ${err.message}`)
@@ -107,5 +107,3 @@ class FileManager {
     }
   }
 }
-
-module.exports = FileManager

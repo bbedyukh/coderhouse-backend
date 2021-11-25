@@ -1,16 +1,17 @@
-const express = require('express')
-const FileManager = require('../classes/fileManager')
-const router = express.Router()
+import express from 'express'
+import FileManager from '../classes/fileManager.js'
+import uploadService from '../services/uploadService.js'
 const fileManager = new FileManager()
+const products = express.Router()
 
-router.get('/', (req, res) => {
+products.get('/', (req, res) => {
   fileManager.getAll().then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
-router.get('/:id', (req, res) => {
+products.get('/:id', (req, res) => {
   const id = Number(req.params.id)
   fileManager.getById(id).then(result => {
     if (result.status === 'success') res.status(200).json(result)
@@ -18,15 +19,18 @@ router.get('/:id', (req, res) => {
   })
 })
 
-router.post('/', (req, res) => {
+products.post('/', uploadService.single('file'), (req, res) => {
+  const file = req.file
   const product = req.body
+  console.log(product)
+  product.thumbnail = `${req.protocol}://${req.hostname}:8080/uploads/${file.filename}`
   fileManager.save(product).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
-router.put('/:id', (req, res) => {
+products.put('/:id', (req, res) => {
   const id = Number(req.params.id)
   const product = req.body
   fileManager.updateById(id, product).then(result => {
@@ -35,7 +39,7 @@ router.put('/:id', (req, res) => {
   })
 })
 
-router.delete('/:id', (req, res) => {
+products.delete('/:id', (req, res) => {
   const id = Number(req.params.id)
   fileManager.deleteById(id).then(result => {
     if (result.status === 'success') res.status(200).json(result)
@@ -43,4 +47,4 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-module.exports = router
+export default products

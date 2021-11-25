@@ -1,0 +1,11 @@
+<input type="button" onclick="location.href='/'" value="Upload a product">
+
+<div>
+    {{#each products}}
+    <div>
+        <p>{{this.title}}</p>
+        <p>{{this.price}}</p>
+        <img src={{this.thumbnail}} alt='image'>
+    </div>
+    {{/each}}
+</div>

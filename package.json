@@ -1,10 +1,11 @@
 {
     "name": "backend",
     "version": "1.0.0",
-    "description": "",
+    "description": "A backend coderhouse project",
     "main": "src/",
+    "type": "module",
     "scripts": {
-        "start": "nodemon src/index",
+        "start": "nodemon src/server",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -12,17 +13,19 @@
         "url": "git+https://github.com/bbedyukh/coderhouse-backend.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "Bogdan Bedyukh",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/bbedyukh/coderhouse-backend/issues"
     },
     "homepage": "https://github.com/bbedyukh/coderhouse-backend#readme",
     "dependencies": {
-        "cors": "^2.8.5",
+        "cors": "2.8.5",
         "express": "4.17.1",
+        "express-handlebars": "6.0.1",
         "moment": "2.29.1",
-        "multer": "^1.4.3"
+        "multer": "1.4.3",
+        "socket.io": "^4.4.0"
     },
     "devDependencies": {
         "nodemon": "2.0.14",
