@@ -6,17 +6,20 @@
         <input class="btn btn-primary" type="button" onclick="location.href='/'" value="Upload a product" />
       </div>
       <div class="mt-5" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-        {{#each products}}
-        <div style="padding: 1rem;">
-          <div class="card" style="width: 15rem;">
-            <img src={{this.thumbnail}} class="card-img-top" alt={{this.thumbnail}}>
-            <div class="card-body">
-              <h5 class="card-title">{{this.title}}</h5>
-              <p class="card-text">${{this.price}}</p>
+        <% for(product of products) { %>
+          <div style="padding: 1rem;">
+            <div class="card" style="width: 15rem;">
+              <img src=<%=product.thumbnail%> class="card-img-top" alt=<%=product.thumbnail%>>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= product.title %>
+                  </h5>
+                  <p class="card-text">$<%= product.price %>
+                  </p>
+                </div>
             </div>
           </div>
-        </div>
-        {{/each}}
+          <% } %>
       </div>
     </div>
   </div>

@@ -12,7 +12,7 @@ export default class FileManager {
       return { status: 'success', payload: JSON.parse(readFile) }
     } catch (err) {
       console.log(`Read file error: ${err.message}`)
-      return { status: 'error', message: 'Read file error.' }
+      return { status: 'error', message: err.message }
     }
   }
 

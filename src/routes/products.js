@@ -22,7 +22,6 @@ products.get('/:id', (req, res) => {
 products.post('/', uploadService.single('file'), (req, res) => {
   const file = req.file
   const product = req.body
-  console.log(product)
   product.thumbnail = `${req.protocol}://${req.hostname}:8080/uploads/${file.filename}`
   fileManager.save(product).then(result => {
     if (result.status === 'success') res.status(200).json(result)

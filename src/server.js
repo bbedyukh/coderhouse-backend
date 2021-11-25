@@ -20,25 +20,28 @@ const server = app.listen(PORT, () => {
 
 server.on('error', (error) => console.error(`Error server: ${error}`))
 
-// Templates engine
-
-/// Handlebars
-app.engine('handlebars', engine())
+/// Templates engine
 app.set('views', pathRoot + '/views')
+
+// Handlebars
+app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
+
+// Pug
 // app.set('view engine', 'pug')
+
+// Pug
 // app.set('view engine', 'ejs')
 
-// Middleware
+/// Middleware
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
-app.use(uploadService.single('file'))
 app.use('/uploads/', express.static(pathRoot + '/uploads'))
 app.use(express.static(pathRoot + '/public'))
 
-// Routers
+/// Routers
 app.use('/api/products', products)
 
 // app.get('/', (req, res) => {
@@ -50,6 +53,7 @@ app.get('/views/products', (req, res) => {
     const products = result.payload
     const object = { products: products }
     if (result.status === 'success') res.render('products', object)
+    else if (result.status === 'error' && result.message === 'The document is empty!') res.render('noproducts', { noproducts: 'No hay productos.' })
     else res.status(500).send(result)
   })
 })
