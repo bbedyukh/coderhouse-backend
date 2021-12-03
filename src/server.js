@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import { Server } from 'socket.io'
 import { engine } from 'express-handlebars'
 import uploadService from './services/uploadService.js'
 import products from './routes/products.js'
@@ -20,20 +21,43 @@ const server = app.listen(PORT, () => {
 
 server.on('error', (error) => console.error(`Error server: ${error}`))
 
-/// Templates engine
+/// ////////////////////
+/// Template engine ////
+/// ////////////////////
+
 app.set('views', pathRoot + '/views')
 
 // Handlebars
 app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 
-// Pug
-// app.set('view engine', 'pug')
+/// ///////////////
+/// WebSockets ////
+/// ///////////////
 
-// Pug
-// app.set('view engine', 'ejs')
+const io = new Server(server)
+const arrayProducts = []
+const chat = []
+io.on('connection', socket => {
+  console.log('A client has been connected!')
+  socket.emit('welcome', { message: 'Welcome to server!' })
 
-/// Middleware
+  socket.emit('products', arrayProducts)
+  socket.on('products', data => {
+    arrayProducts.push(data)
+    io.emit('products', arrayProducts)
+  })
+
+  socket.emit('chat', chat)
+  socket.on('chat', data => {
+    chat.push({ email: data.email, date: data.date, message: data.message })
+    io.emit('chat', chat)
+  })
+})
+
+/// ///////////////
+/// Middleware ////
+/// ///////////////
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -41,21 +65,18 @@ app.use(cors())
 app.use('/uploads/', express.static(pathRoot + '/uploads'))
 app.use(express.static(pathRoot + '/public'))
 
-/// Routers
+/// ///////////////
+///   Routers  ////
+/// ///////////////
+
 app.use('/api/products', products)
 
 // app.get('/', (req, res) => {
 //   res.send('Welcome to Gläzen API.')
 // })
 
-app.get('/views/products', (req, res) => {
-  fileManager.getAll().then(result => {
-    const products = result.payload
-    const object = { products: products }
-    if (result.status === 'success') res.render('products', object)
-    else if (result.status === 'error' && result.message === 'The document is empty!') res.render('noproducts', { noproducts: 'No hay productos.' })
-    else res.status(500).send(result)
-  })
+app.get('/', (req, res) => {
+  res.render('index', {})
 })
 
 app.post('/api/uploadFile', uploadService.single('file'), (req, res) => {
