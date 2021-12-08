@@ -43,7 +43,7 @@ export default class FileManager {
         const ids = products.map(product => product.id)
         const maxId = Math.max(...ids)
         id = maxId + 1
-        const hasProduct = products.find(e => e.title === product.title)
+        const hasProduct = products.find(e => e.name === product.name)
         if (hasProduct) throw new Error('The product already exists with the same name.')
       }
 
@@ -64,7 +64,7 @@ export default class FileManager {
       const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
       if (!readFile) throw new Error('The document is empty!')
       let products = JSON.parse(readFile)
-      const hasProduct = products.find(e => e.title === product.title)
+      const hasProduct = products.find(e => e.name === product.name)
       if (hasProduct) throw new Error('The product already exists with the same name.')
       let newProduct = products.find(e => e.id === id)
       if (!newProduct) throw new Error('Product not found.')
@@ -72,9 +72,13 @@ export default class FileManager {
 
       newProduct = {
         ...newProduct,
-        title: product.title,
+        timestamp: product.timestamp,
+        description: product.description,
+        code: product.code,
+        stock: product.stock,
+        name: product.name,
         price: product.price,
-        thumbnail: product.thumbnail
+        picture: product.thumbnail
       }
 
       products = [...products, newProduct]

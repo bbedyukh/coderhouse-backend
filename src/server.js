@@ -1,11 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import { Server } from 'socket.io'
-import { engine } from 'express-handlebars'
-import uploadService from './services/uploadService.js'
+// import uploadService from './services/uploadService.js'
 import products from './routes/products.js'
-import FileManager from './classes/fileManager.js'
-const fileManager = new FileManager()
+import cart from './routes/cart.js'
 
 export const { pathname: pathRoot } = new URL('./', import.meta.url)
 const app = express()
@@ -20,40 +17,6 @@ const server = app.listen(PORT, () => {
 })
 
 server.on('error', (error) => console.error(`Error server: ${error}`))
-
-/// ////////////////////
-/// Template engine ////
-/// ////////////////////
-
-app.set('views', pathRoot + '/views')
-
-// Handlebars
-app.engine('handlebars', engine())
-app.set('view engine', 'handlebars')
-
-/// ///////////////
-/// WebSockets ////
-/// ///////////////
-
-const io = new Server(server)
-const arrayProducts = []
-const chat = []
-io.on('connection', socket => {
-  console.log('A client has been connected!')
-  socket.emit('welcome', { message: 'Welcome to server!' })
-
-  socket.emit('products', arrayProducts)
-  socket.on('products', data => {
-    arrayProducts.push(data)
-    io.emit('products', arrayProducts)
-  })
-
-  socket.emit('chat', chat)
-  socket.on('chat', data => {
-    chat.push({ email: data.email, date: data.date, message: data.message })
-    io.emit('chat', chat)
-  })
-})
 
 /// ///////////////
 /// Middleware ////
@@ -70,20 +33,17 @@ app.use(express.static(pathRoot + '/public'))
 /// ///////////////
 
 app.use('/api/products', products)
-
-// app.get('/', (req, res) => {
-//   res.send('Welcome to Gläzen API.')
-// })
+app.use('/api/cart', cart)
 
 app.get('/', (req, res) => {
-  res.render('index', {})
+  res.send('Welcome to Gläzen API.')
 })
 
-app.post('/api/uploadFile', uploadService.single('file'), (req, res) => {
-  const file = req.file
-  if (!file) res.status(500).send({ status: 'error', message: 'Error uploading file.' })
-  res.send({ status: 'success', message: 'File uploaded successfully.' })
-})
+// app.post('/api/uploadFile', uploadService.single('file'), (req, res) => {
+//   const file = req.file
+//   if (!file) res.status(500).send({ status: 'error', message: 'Error uploading file.' })
+//   res.send({ status: 'success', message: 'File uploaded successfully.' })
+// })
 
 app.use((req, res) => {
   const date = new Date().toISOString()
