@@ -5,26 +5,15 @@ export default class FileManager {
     this.fileLocation = 'src/files/products.json'
   }
 
-  async getAll () {
-    try {
-      const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!readFile) throw new Error('The document is empty!')
-      return { status: 'success', payload: JSON.parse(readFile) }
-    } catch (err) {
-      console.log(`Read file error: ${err.message}`)
-      return { status: 'error', message: err.message }
-    }
-  }
-
   async getById (id) {
     try {
       if (!id) throw new Error('Missing \'id\' parameter!')
-      const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!readFile) throw new Error('The document is empty!')
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      if (!productsFile) throw new Error('The document is empty!')
 
-      const data = JSON.parse(readFile).find(e => e.id === id)
-      if (!data) throw new Error('Product not found.')
-      return { status: 'success', payload: data }
+      const product = JSON.parse(productsFile).find(e => e.id === id)
+      if (!product) throw new Error('Product not found.')
+      return { status: 'success', payload: product }
     } catch (err) {
       console.log(`Read file error: ${err.message}`)
       return { status: 'error', message: 'Product not found.' }
@@ -34,20 +23,21 @@ export default class FileManager {
   async save (product) {
     try {
       if (Object.keys(product).length === 0) throw new Error('Missing or empty \'product\' parameter!')
-      const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
       let products = []
       let id = 1
 
-      if (readFile) {
-        products = JSON.parse(readFile)
+      if (productsFile) {
+        products = JSON.parse(productsFile)
         const ids = products.map(product => product.id)
         const maxId = Math.max(...ids)
         id = maxId + 1
-        const hasProduct = products.find(e => e.name === product.name)
-        if (hasProduct) throw new Error('The product already exists with the same name.')
+        const product = products.find(e => e.name === product.name)
+        if (product) throw new Error('The product already exists with the same name.')
       }
 
       product.id = id
+      product.timestamp = Date.now()
       products = [...products, product]
 
       await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
@@ -108,6 +98,17 @@ export default class FileManager {
     } catch (err) {
       console.log(`Save file error: ${err.message}`)
       return { status: 'error', message: 'Delete product error.' }
+    }
+  }
+
+  async getAll () {
+    try {
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      if (!productsFile) throw new Error('The document is empty!')
+      return { status: 'success', payload: JSON.parse(productsFile) }
+    } catch (err) {
+      console.log(`Read file error: ${err.message}`)
+      return { status: 'error', message: err.message }
     }
   }
 }

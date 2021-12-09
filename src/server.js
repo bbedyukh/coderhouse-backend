@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 // import uploadService from './services/uploadService.js'
 import products from './routes/products.js'
-import cart from './routes/cart.js'
+import carts from './routes/cart.js'
 
 export const { pathname: pathRoot } = new URL('./', import.meta.url)
 const app = express()
@@ -33,11 +33,7 @@ app.use(express.static(pathRoot + '/public'))
 /// ///////////////
 
 app.use('/api/products', products)
-app.use('/api/cart', cart)
-
-app.get('/', (req, res) => {
-  res.send('Welcome to Gläzen API.')
-})
+app.use('/api/cart', carts)
 
 // app.post('/api/uploadFile', uploadService.single('file'), (req, res) => {
 //   const file = req.file
@@ -48,5 +44,5 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   const date = new Date().toISOString()
   console.log(`[${date}] - ${req.method} ${req.path} not found.`)
-  res.status(404).json({ status: 'error', message: 'Not found' })
+  res.status(404).json({ error: -2, descripcion: `Path ${req.path} method ${req.method} not implemented.` })
 })

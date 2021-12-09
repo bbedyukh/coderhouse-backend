@@ -11,24 +11,16 @@ carts.post('/', (req, res) => {
 })
 
 carts.delete('/:id', (req, res) => {
-  const id = Number(req.params.id)
-  cartsManager.deleteCartById(id).then(result => {
+  const cartId = Number(req.params.id)
+  cartsManager.deleteCartById(cartId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
 carts.get('/:id/products', (req, res) => {
-  const id = Number(req.params.id)
-  cartsManager.getAll(id).then(result => {
-    if (result.status === 'success') res.status(200).json(result)
-    else res.status(500).send(result)
-  })
-})
-
-carts.get('/:id/products', (req, res) => {
-  const id = Number(req.params.id)
-  cartsManager.getAll(id).then(result => {
+  const cartId = Number(req.params.id)
+  cartsManager.getProductsByCartId(cartId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })

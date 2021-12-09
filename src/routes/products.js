@@ -3,7 +3,7 @@ import FileManager from '../classes/fileManager.js'
 import uploadService from '../services/uploadService.js'
 const fileManager = new FileManager()
 const products = express.Router()
-const isRoleAdministrator = true
+const isRoleAdministrator = false
 
 products.get('/', (req, res) => {
   fileManager.getAll().then(result => {
@@ -24,13 +24,13 @@ products.post('/', uploadService.single('picture'), (req, res) => {
   if (isRoleAdministrator) {
     const file = req.file
     const product = req.body
-    product.thumbnail = `${req.protocol}://${req.hostname}:8080/uploads/${file.filename}`
+    product.picture = `${req.protocol}://${req.hostname}:8080/uploads/${file.filename}`
     fileManager.save(product).then(result => {
       if (result.status === 'success') res.status(200).json(result)
       else res.status(500).send(result)
     })
   } else {
-    res.status(500).send({ error: -1, description: 'route /api/products/ method POST unauthorized' })
+    res.status(500).send({ error: -1, description: `Path ${req.path} method ${req.method} unauthorized` })
   }
 })
 
@@ -43,7 +43,7 @@ products.put('/:id', (req, res) => {
       else res.status(500).send(result)
     })
   } else {
-    res.status(500).send({ error: -1, description: 'route /api/products/:id method PUT unauthorized' })
+    res.status(500).send({ error: -1, description: `Path ${req.path} method ${req.method} unauthorized` })
   }
 })
 
@@ -55,7 +55,7 @@ products.delete('/:id', (req, res) => {
       else res.status(500).send(result)
     })
   } else {
-    res.status(500).send({ error: -1, description: 'route /api/products/:id method DELETE unauthorized' })
+    res.status(500).send({ error: -1, description: `Path ${req.path} method ${req.method} unauthorized` })
   }
 })
 
