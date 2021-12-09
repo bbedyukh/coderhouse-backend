@@ -32,12 +32,14 @@ export default class FileManager {
         const ids = products.map(product => product.id)
         const maxId = Math.max(...ids)
         id = maxId + 1
-        const product = products.find(e => e.name === product.name)
-        if (product) throw new Error('The product already exists with the same name.')
+        const hasProduct = products.find(e => e.name === product.name)
+        if (hasProduct) throw new Error('The product already exists with the same name.')
       }
 
       product.id = id
       product.timestamp = Date.now()
+      product.price = parseInt(product.price)
+      product.stock = parseInt(product.stock)
       products = [...products, product]
 
       await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
