@@ -24,7 +24,7 @@ products.get('/:id', (req, res) => {
 products.post('/', authMiddleware, uploadService.single('picture'), (req, res) => {
   const file = req.file
   const product = req.body
-  product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+  product.picture = `${req.protocol}://${req.hostname}/uploads/${file.filename}`
   fileManager.save(product).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
