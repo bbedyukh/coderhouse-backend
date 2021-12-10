@@ -16,7 +16,6 @@ const storage = multer.diskStorage({
     cb(null, __dirname + '/uploads')
   },
   filename: (req, file, cb) => {
-    // cb(null, `${Date.now()}-${file.originalname}`)
     cb(null, getRandomFileName(file))
   }
 })
