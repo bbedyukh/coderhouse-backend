@@ -32,9 +32,13 @@ export default class productsManager {
 
       const product = {
         id: 1,
+        name: item.name,
+        description: item.description,
+        code: item.code,
         timestamp: Date.now(),
-        price: parseInt(item.price),
-        stock: parseInt(item.stock)
+        price: item.price,
+        stock: item.stock,
+        picture: item.picture
       }
 
       if (products.length > 0) {
@@ -66,12 +70,12 @@ export default class productsManager {
 
       product = {
         ...product,
-        timestamp: item.timestamp,
+        name: item.name,
         description: item.description,
         code: item.code,
-        stock: item.stock,
-        name: item.name,
-        price: item.price,
+        timestamp: item.timestamp,
+        price: parseInt(item.price),
+        stock: parseInt(item.stock),
         picture: item.picture
       }
 
