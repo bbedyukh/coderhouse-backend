@@ -36,8 +36,8 @@ export default class productsManager {
         description: item.description,
         code: item.code,
         timestamp: Date.now(),
-        price: item.price,
-        stock: item.stock,
+        price: parseInt(item.price),
+        stock: parseInt(item.stock),
         picture: item.picture
       }
 
