@@ -8,15 +8,14 @@ export default class CartsManager {
   async create () {
     try {
       const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      let carts = []
+      let carts = cartsFile ? JSON.parse(cartsFile) : []
       const cart = {
         id: 1,
         timestamp: Date.now(),
         products: []
       }
 
-      if (cartsFile) {
-        carts = JSON.parse(cartsFile)
+      if (carts.length > 0) {
         const ids = carts.map(c => c.id)
         const maxId = Math.max(...ids)
         cart.id = maxId + 1
@@ -76,6 +75,7 @@ export default class CartsManager {
       if (!productsFile) throw new Error('The document is empty!')
       const products = JSON.parse(productsFile)
       const product = products.find(p => p.id === productId)
+      if (!product) throw new Error('Non-existent product.')
 
       const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
       if (!cartsFile) throw new Error('The document is empty!')

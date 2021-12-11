@@ -1,6 +1,6 @@
 import fs from 'fs'
 
-export default class FileManager {
+export default class productsManager {
   constructor () {
     this.fileLocation = 'src/files/products.json'
   }
@@ -20,26 +20,29 @@ export default class FileManager {
     }
   }
 
-  async save (product) {
+  async save (item) {
     try {
-      if (Object.keys(product).length === 0) throw new Error('Missing or empty \'product\' parameter!')
-      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      let products = []
-      let id = 1
+      if (Object.keys(item).length === 0) throw new Error('Missing or empty \'item\' parameter!')
 
-      if (productsFile) {
-        products = JSON.parse(productsFile)
-        const ids = products.map(product => product.id)
-        const maxId = Math.max(...ids)
-        id = maxId + 1
-        const hasProduct = products.find(e => e.name === product.name)
-        if (hasProduct) throw new Error('The product already exists with the same name.')
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      let products = productsFile ? JSON.parse(productsFile) : []
+
+      const hasProduct = products.find(e => e.name === item.name)
+      if (hasProduct) throw new Error('The product already exists with the same name.')
+
+      const product = {
+        id: 1,
+        timestamp: Date.now(),
+        price: parseInt(item.price),
+        stock: parseInt(item.stock)
       }
 
-      product.id = id
-      product.timestamp = Date.now()
-      product.price = parseInt(product.price)
-      product.stock = parseInt(product.stock)
+      if (products.length > 0) {
+        const ids = products.map(product => product.id)
+        const maxId = Math.max(...ids)
+        product.id = maxId + 1
+      }
+
       products = [...products, product]
 
       await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
@@ -50,30 +53,29 @@ export default class FileManager {
     }
   }
 
-  async updateById (id, product) {
+  async updateById (id, item) {
     try {
-      if (!id || Object.keys(product).length === 0) throw new Error('Missing or empty \'id\' or body parameter!')
-      const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!readFile) throw new Error('The document is empty!')
-      let products = JSON.parse(readFile)
-      const hasProduct = products.find(e => e.name === product.name)
-      if (hasProduct) throw new Error('The product already exists with the same name.')
-      let newProduct = products.find(e => e.id === id)
-      if (!newProduct) throw new Error('Product not found.')
+      if (!id || Object.keys(item).length === 0) throw new Error('Missing or empty \'id\' or body parameter!')
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      if (!productsFile) throw new Error('The document is empty!')
+      let products = productsFile ? JSON.parse(productsFile) : []
+
+      let product = products.find(e => e.id === id)
+      if (!product) throw new Error('Product not found.')
       products = products.filter(e => e.id !== id)
 
-      newProduct = {
-        ...newProduct,
-        timestamp: product.timestamp,
-        description: product.description,
-        code: product.code,
-        stock: product.stock,
-        name: product.name,
-        price: product.price,
-        picture: product.thumbnail
+      product = {
+        ...product,
+        timestamp: item.timestamp,
+        description: item.description,
+        code: item.code,
+        stock: item.stock,
+        name: item.name,
+        price: item.price,
+        picture: item.picture
       }
 
-      products = [...products, newProduct]
+      products = [...products, product]
       await fs.promises.writeFile(this.fileLocation, JSON.stringify(products, null, 2))
       return { status: 'success', message: 'Product updated successfully.' }
     } catch (err) {
@@ -85,12 +87,12 @@ export default class FileManager {
   async deleteById (id) {
     try {
       if (!id) throw new Error('Missing \'id\' parameter!')
-      const readFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      let products = []
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      const products = productsFile ? JSON.parse(productsFile) : []
 
-      if (readFile) products = JSON.parse(readFile)
-      const idFound = products.find(e => e.id === id)
-      if (!idFound) throw new Error(`ID '${id}' not found in document.`)
+      const product = products.find(e => e.id === id)
+      if (!product) throw new Error('Product not found.')
+
       let newProducts = products.filter(e => e.id !== id)
       if (newProducts.length === 0) newProducts = ''
       else newProducts = JSON.stringify(newProducts)
