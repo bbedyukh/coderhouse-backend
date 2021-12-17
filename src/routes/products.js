@@ -1,13 +1,15 @@
 import express from 'express'
-import ProductsManager from '../classes/productsManager.js'
+import ProductsService from '../services/productsService.js'
 import uploadService from '../services/uploadService.js'
 import { authMiddleware } from '../utils.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const productsManager = new ProductsManager()
+const productsService = new ProductsService()
 const products = express.Router()
 
 products.get('/', (req, res) => {
-  productsManager.getAll().then(result => {
+  productsService.getProducts().then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
@@ -15,7 +17,7 @@ products.get('/', (req, res) => {
 
 products.get('/:id', (req, res) => {
   const id = Number(req.params.id)
-  productsManager.getById(id).then(result => {
+  productsService.getProduct(id).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
@@ -25,7 +27,7 @@ products.post('/', authMiddleware, uploadService.single('picture'), (req, res) =
   const file = req.file
   const product = req.body
   product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
-  productsManager.save(product).then(result => {
+  productsService.addProduct(product).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
@@ -34,7 +36,7 @@ products.post('/', authMiddleware, uploadService.single('picture'), (req, res) =
 products.put('/:id', authMiddleware, (req, res) => {
   const id = Number(req.params.id)
   const product = req.body
-  productsManager.updateById(id, product).then(result => {
+  productsService.updateProduct(id, product).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
@@ -42,7 +44,7 @@ products.put('/:id', authMiddleware, (req, res) => {
 
 products.delete('/:id', authMiddleware, (req, res) => {
   const id = Number(req.params.id)
-  productsManager.deleteById(id).then(result => {
+  productsService.deleteProduct(id).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })

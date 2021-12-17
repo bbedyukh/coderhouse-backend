@@ -82,6 +82,8 @@ export default class CartsManager {
       const aux = JSON.parse(cartsFile)
       let carts = JSON.parse(cartsFile).filter(c => c.id !== cartId)
       const cart = aux.find(c => c.id === cartId)
+      const exists = cart.products.find(p => p.id === productId)
+      if (exists) throw new Error('Product already exists in cart.')
       cart.products = [
         ...cart.products,
         product

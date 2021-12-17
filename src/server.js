@@ -1,9 +1,10 @@
 import express from 'express'
 import cors from 'cors'
 import { __dirname } from './utils.js'
-// import uploadService from './services/uploadService.js'
 import products from './routes/products.js'
 import carts from './routes/cart.js'
+import dotenv from 'dotenv'
+dotenv.config()
 
 const isRoleAdministrator = true
 const app = express()
@@ -40,12 +41,6 @@ app.use(express.static(__dirname + '/public'))
 
 app.use('/api/products', products)
 app.use('/api/cart', carts)
-
-// app.post('/api/uploadFile', uploadService.single('file'), (req, res) => {
-//   const file = req.file
-//   if (!file) res.status(500).send({ status: 'error', message: 'Error uploading file.' })
-//   res.send({ status: 'success', message: 'File uploaded successfully.' })
-// })
 
 app.use((req, res) => {
   const date = new Date().toISOString()
