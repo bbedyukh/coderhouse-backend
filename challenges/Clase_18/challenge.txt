@@ -111,4 +111,4 @@ db.products.updateMany({price: {$gt: 700}}, {$set: {stock: 0}})
 db.products.deleteMany({price: {$lte: 700}})
 
 db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]})
-db.auth("pepe", "asd456")
+En este último paso de crear un usuario con role readOnly no va a funcionar solamente con correr este comando mencionado, ya que se debería habilitar la authentication desde el archivo de configuración de MongoDB, y por último reiniciar el servicio.
