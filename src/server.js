@@ -3,22 +3,9 @@ import cors from 'cors'
 import { __dirname } from './utils.js'
 import products from './routes/products.js'
 import carts from './routes/cart.js'
-import dotenv from 'dotenv'
-dotenv.config()
 
 const isRoleAdministrator = true
 const app = express()
-const PORT = process.env.PORT || 8080
-const server = app.listen(PORT, () => {
-  const message = `| Server listen on port ${PORT} |`
-  const link = `| - http://localhost:${PORT}    |`
-  console.log('-'.repeat(message.length))
-  console.log(message)
-  console.log(link)
-  console.log('-'.repeat(message.length))
-})
-
-server.on('error', (error) => console.error(`Error server: ${error}`))
 
 /// ///////////////
 /// Middleware ////
@@ -47,3 +34,5 @@ app.use((req, res) => {
   console.log(`[${date}] - ${req.method} ${req.path} not implemented.`)
   res.status(404).json({ error: -2, descripcion: `Path ${req.path} method ${req.method} not implemented.` })
 })
+
+export default app
