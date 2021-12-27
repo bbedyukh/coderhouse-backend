@@ -1,44 +1,47 @@
 import express from 'express'
-import CartsManager from '../classes/cartsManager.js'
-const cartsManager = new CartsManager()
+// import CartsFile from '../dao/carts/cartsFile.js'
+import CartsMongoDB from '../dao/carts/cartsMongoDB.js'
+// const cartsService = new CartsFile()
+const cartsService = new CartsMongoDB()
+
 const carts = express.Router()
 
 carts.post('/', (req, res) => {
-  cartsManager.create().then(result => {
+  cartsService.createCart().then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
 carts.delete('/:id', (req, res) => {
-  const cartId = Number(req.params.id)
-  cartsManager.deleteCartById(cartId).then(result => {
+  const cartId = req.params.id
+  cartsService.deleteCartById(cartId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
 carts.get('/:id/products', (req, res) => {
-  const cartId = Number(req.params.id)
-  cartsManager.getProductsByCartId(cartId).then(result => {
+  const cartId = req.params.id
+  cartsService.getProductsByCartId(cartId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
 carts.post('/:id/products/:productId', (req, res) => {
-  const cartId = Number(req.params.id)
-  const productId = Number(req.params.productId)
-  cartsManager.addProduct(cartId, productId).then(result => {
+  const cartId = req.params.id
+  const productId = req.params.productId
+  cartsService.addProductToCart(cartId, productId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })
 })
 
 carts.delete('/:id/products/:productId', (req, res) => {
-  const cartId = Number(req.params.id)
-  const productId = Number(req.params.productId)
-  cartsManager.deleteProduct(cartId, productId).then(result => {
+  const cartId = req.params.id
+  const productId = req.params.productId
+  cartsService.deleteProductFromCart(cartId, productId).then(result => {
     if (result.status === 'success') res.status(200).json(result)
     else res.status(500).send(result)
   })

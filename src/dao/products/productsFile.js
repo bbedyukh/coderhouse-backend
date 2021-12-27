@@ -1,11 +1,24 @@
+import FileContainer from '../../containers/fileContainer.js'
+import { __dirname } from '../../utils.js'
 import fs from 'fs'
 
-export default class productsManager {
+class ProductsFile extends FileContainer {
   constructor () {
-    this.fileLocation = 'src/files/products.json'
+    super(__dirname + '/dao/db/products.json')
   }
 
-  async getById (id) {
+  getProducts = async () => {
+    try {
+      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      if (!productsFile) throw new Error('The document is empty!')
+      return { status: 'success', payload: JSON.parse(productsFile) }
+    } catch (err) {
+      console.log(`Read file error: ${err.message}`)
+      return { status: 'error', message: err.message }
+    }
+  }
+
+  getProductById = async (id) => {
     try {
       if (!id) throw new Error('Missing \'id\' parameter!')
       const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
@@ -20,7 +33,7 @@ export default class productsManager {
     }
   }
 
-  async save (item) {
+  createProduct = async (item) => {
     try {
       if (Object.keys(item).length === 0) throw new Error('Missing or empty \'item\' parameter!')
 
@@ -57,12 +70,15 @@ export default class productsManager {
     }
   }
 
-  async updateById (id, item) {
+  updateProductById = async (id, item) => {
     try {
       if (!id || Object.keys(item).length === 0) throw new Error('Missing or empty \'id\' or body parameter!')
       const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
       if (!productsFile) throw new Error('The document is empty!')
       let products = productsFile ? JSON.parse(productsFile) : []
+
+      const hasProduct = products.find(e => e.name === item.name)
+      if (hasProduct) throw new Error('The product already exists with the same name.')
 
       let product = products.find(e => e.id === id)
       if (!product) throw new Error('Product not found.')
@@ -88,7 +104,7 @@ export default class productsManager {
     }
   }
 
-  async deleteById (id) {
+  deleteProductById = async (id) => {
     try {
       if (!id) throw new Error('Missing \'id\' parameter!')
       const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
@@ -99,9 +115,8 @@ export default class productsManager {
 
       let newProducts = products.filter(e => e.id !== id)
       if (newProducts.length === 0) newProducts = ''
-      else newProducts = JSON.stringify(newProducts)
 
-      await fs.promises.writeFile(this.fileLocation, newProducts)
+      await fs.promises.writeFile(this.fileLocation, JSON.stringify(newProducts, null, 2))
       return { status: 'success', message: 'Product deleted successfully.' }
     } catch (err) {
       console.log(`Save file error: ${err.message}`)
@@ -109,14 +124,6 @@ export default class productsManager {
     }
   }
 
-  async getAll () {
-    try {
-      const productsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!productsFile) throw new Error('The document is empty!')
-      return { status: 'success', payload: JSON.parse(productsFile) }
-    } catch (err) {
-      console.log(`Read file error: ${err.message}`)
-      return { status: 'error', message: err.message }
-    }
-  }
 }
+
+export default ProductsFile

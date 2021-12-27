@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import { __dirname } from './utils.js'
 import products from './routes/products.js'
-import carts from './routes/cart.js'
+import carts from './routes/carts.js'
 
 const isRoleAdministrator = true
 const app = express()

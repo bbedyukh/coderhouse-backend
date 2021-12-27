@@ -1,11 +1,13 @@
+import FileContainer from '../../containers/fileContainer.js'
+import { __dirname } from '../../utils.js'
 import fs from 'fs'
 
-export default class CartsManager {
+class CartsFile extends FileContainer {
   constructor () {
-    this.fileLocation = 'src/files/carts.json'
+    super(__dirname + '/dao/db/carts.json')
   }
 
-  async create () {
+  async createCart () {
     try {
       const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
       let carts = cartsFile ? JSON.parse(cartsFile) : []
@@ -68,10 +70,10 @@ export default class CartsManager {
     }
   }
 
-  async addProduct (cartId, productId) {
+  async addProductToCart (cartId, productId) {
     try {
       if (!cartId || !productId) throw new Error('Missing \'cartId\' or \'productId\' parameter!')
-      const productsFile = await fs.promises.readFile('src/files/products.json', 'utf-8')
+      const productsFile = await fs.promises.readFile(__dirname + '/dao/db/products.json', 'utf-8')
       if (!productsFile) throw new Error('The document is empty!')
       const products = JSON.parse(productsFile)
       const product = products.find(p => p.id === productId)
@@ -102,7 +104,7 @@ export default class CartsManager {
     }
   }
 
-  async deleteProduct (cartId, productId) {
+  async deleteProductFromCart (cartId, productId) {
     try {
       if (!cartId || !productId) throw new Error('Missing \'cartId\' or \'productId\' parameter!')
       const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
@@ -126,3 +128,5 @@ export default class CartsManager {
     }
   }
 }
+
+export default CartsFile
