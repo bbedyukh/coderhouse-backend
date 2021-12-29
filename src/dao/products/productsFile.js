@@ -1,6 +1,6 @@
 import FileContainer from '../../containers/fileContainer.js'
 import { __dirname } from '../../utils.js'
-import fs from 'fs'
+import fs, {unlink} from 'fs'
 
 class ProductsFile extends FileContainer {
   constructor () {
@@ -112,6 +112,14 @@ class ProductsFile extends FileContainer {
 
       const product = products.find(e => e.id === id)
       if (!product) throw new Error('Product not found.')
+
+      const picture = product.picture
+      const index = picture.lastIndexOf('/') + 1
+      const pictureName = picture.substring(index, picture.length)
+      unlink(__dirname + '/uploads/' + pictureName, (err) => {
+        if (err) throw err
+        console.log(`Picture ${pictureName} has been deleted successfully from server.`)
+      })
 
       let newProducts = products.filter(e => e.id !== id)
       if (newProducts.length === 0) newProducts = ''

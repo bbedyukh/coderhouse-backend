@@ -11,7 +11,7 @@ export default class MongoDBContainer {
       if (mongoose.connection.readyState === 0) {
         mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
           if (err) throw err
-          console.log('Connected to MongoDB.')
+          // console.log('Connected to MongoDB.')
         })
       }
     } catch (err) {

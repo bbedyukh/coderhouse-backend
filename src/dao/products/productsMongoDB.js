@@ -1,12 +1,12 @@
 import MongoDBContainer from '../../containers/mongoDBContainer.js'
 import { __dirname } from '../../utils.js'
-import { productsModel } from '../models/products.js'
+import { ProductModel } from '../models/Product.js'
 import { unlink } from 'fs'
 
 export default class ProductsMongoDB extends MongoDBContainer {
   async getProducts () {
     try {
-      const products = await productsModel.find()
+      const products = await ProductModel.find()
       return { status: 'success', payload: products }
     } catch (err) {
       console.log(`${err}`)
@@ -16,7 +16,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
 
   async getProductById (productId) {
     try {
-      const product = await productsModel.findById(productId)
+      const product = await ProductModel.findById(productId)
       if (!product) throw new Error('Product not found.')
       return { status: 'success', payload: product }
     } catch (err) {
@@ -27,9 +27,9 @@ export default class ProductsMongoDB extends MongoDBContainer {
 
   async createProduct (product) {
     try {
-      const productExists = await productsModel.find({ name: { $eq: product.name } })
+      const productExists = await ProductModel.find({ name: { $eq: product.name } })
       if (productExists.length > 0) throw new Error('Product already exists.')
-      await productsModel.create(product)
+      await ProductModel.create(product)
       return { status: 'success', payload: 'Product has been created successfully.' }
     } catch (err) {
       console.log(`${err}`)
@@ -39,7 +39,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
 
   async updateProductById (productId, item) {
     try {
-      const updated = await productsModel.findByIdAndUpdate(productId, { $set: item })
+      const updated = await ProductModel.findByIdAndUpdate(productId, { $set: item })
       if (!updated) throw new Error('Product update error.')
       return { status: 'success', payload: 'Product has been updated successfully.' }
     } catch (err) {
@@ -50,7 +50,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
 
   async deleteProductById (productId) {
     try {
-      const productDeleted = await productsModel.findByIdAndDelete(productId)
+      const productDeleted = await ProductModel.findByIdAndDelete(productId)
       if (!productDeleted) throw new Error('Product delete error.')
       const picture = productDeleted.picture
       const index = picture.lastIndexOf('/') + 1
