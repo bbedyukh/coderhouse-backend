@@ -30,7 +30,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
       const productExists = await ProductModel.find({ name: { $eq: product.name } })
       if (productExists.length > 0) throw new Error('Product already exists.')
       await ProductModel.create(product)
-      return { status: 'success', payload: 'Product has been created successfully.' }
+      return { status: 'success', message: 'Product has been created successfully.' }
     } catch (err) {
       console.log(`${err}`)
       return { status: 'error', message: err.message }
@@ -41,7 +41,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
     try {
       const updated = await ProductModel.findByIdAndUpdate(productId, { $set: item })
       if (!updated) throw new Error('Product update error.')
-      return { status: 'success', payload: 'Product has been updated successfully.' }
+      return { status: 'success', message: 'Product has been updated successfully.' }
     } catch (err) {
       console.log(`${err}`)
       return { status: 'error', message: err.message }
@@ -59,7 +59,7 @@ export default class ProductsMongoDB extends MongoDBContainer {
         if (err) throw err
         console.log(`Picture ${pictureName} has been deleted successfully from server.`)
       })
-      return { status: 'success', payload: 'Product has been deleted successfully.' }
+      return { status: 'success', message: 'Product has been deleted successfully.' }
     } catch (err) {
       console.log(`${err}`)
       return { status: 'error', message: err.message }

@@ -1,8 +1,25 @@
 import express from 'express'
-// import CartsFile from '../dao/carts/cartsFile.js'
+import CartsFile from '../dao/carts/cartsFile.js'
 import CartsMongoDB from '../dao/carts/cartsMongoDB.js'
-// const cartsService = new CartsFile()
-const cartsService = new CartsMongoDB()
+import CartsFirebase from '../dao/carts/cartsFirebase.js'
+import { TECHNOLOGY } from '../config/config.js'
+
+let cartsService
+
+switch (TECHNOLOGY) {
+  case 'file':
+    cartsService = new CartsFile()
+    break
+  case 'mongodb':
+    cartsService = new CartsMongoDB()
+    break
+  case 'firebase':
+    cartsService = new CartsFirebase()
+    break
+  default:
+    cartsService = new CartsFile()
+    break
+}
 
 const cartsRouter = express.Router()
 
