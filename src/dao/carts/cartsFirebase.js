@@ -10,9 +10,10 @@ export default class CartsFirebase extends FirebaseContainer {
   async createCart () {
     try {
       const cart = await this.cartsRef.add({ products: [] })
+
       return { status: 'success', message: `Cart with ID ${cart.id} has been created successfully.` }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
@@ -28,10 +29,11 @@ export default class CartsFirebase extends FirebaseContainer {
       const productDoc = await this.productsRef.doc(productId).get()
       const product = productDoc.data()
       if (!product) throw new Error('Non-existent product.')
+
       product.id = productId
 
-      const found = cart.products.find(p => p.id === productId)
-      if (found) throw new Error('Product has already been added.')
+      const productFound = cart.products.find(p => p.id === productId)
+      if (productFound) throw new Error('Product already exists in cart.')
 
       const products = [
         ...cart.products,
@@ -39,16 +41,17 @@ export default class CartsFirebase extends FirebaseContainer {
       ]
 
       await this.cartsRef.doc(cartId).set({ products: products })
+
       return { status: 'success', message: 'Product has been added successfully.' }
     } catch (err) {
-      console.log(`Cart add error: ${err.message}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
 
   async getProductsByCartId (cartId) {
     try {
-      if (!cartId) throw new Error('Missing \'id\' parameter!')
+      if (!cartId) throw new Error('Missing \'cartId\' parameter!')
 
       const document = await this.cartsRef.doc(cartId).get()
       const cart = document.data()
@@ -58,7 +61,7 @@ export default class CartsFirebase extends FirebaseContainer {
 
       return { status: 'success', payload: products }
     } catch (err) {
-      console.log(`Cart get error: ${err.message}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
@@ -71,16 +74,16 @@ export default class CartsFirebase extends FirebaseContainer {
       const cart = cartDoc.data()
       if (!cart) throw new Error('Non-existent cart.')
 
-      const productDoc = await this.productsRef.doc(productId).get()
-      const product = productDoc.data()
-      if (!product) throw new Error('Non-existent product.')
+      const product = cart.products.find(p => p.id === productId)
+      if (!product) throw new Error('Non-existent product in cart.')
 
       const products = cart.products.filter(p => p.id !== productId)
 
       await this.cartsRef.doc(cartId).set({ products: products })
-      return { status: 'success', payload: 'Product has been deleted successfully.' }
+
+      return { status: 'success', message: 'Product has been deleted successfully.' }
     } catch (err) {
-      console.log(`Product add error: ${err.message}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
@@ -98,7 +101,7 @@ export default class CartsFirebase extends FirebaseContainer {
 
       return { status: 'success', message: 'Cart has been deleted successfully.' }
     } catch (err) {
-      console.log(`Delete cart error: ${err.message}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }

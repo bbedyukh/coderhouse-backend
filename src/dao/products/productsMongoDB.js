@@ -1,7 +1,5 @@
 import MongoDBContainer from '../../containers/mongoDBContainer.js'
-import { __dirname } from '../../utils.js'
 import { ProductModel } from '../models/Product.js'
-import { unlink } from 'fs'
 
 export default class ProductsMongoDB extends MongoDBContainer {
   async getProducts () {
@@ -9,59 +7,78 @@ export default class ProductsMongoDB extends MongoDBContainer {
       const products = await ProductModel.find()
       return { status: 'success', payload: products }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
 
   async getProductById (productId) {
     try {
+      if (!productId) throw new Error('Missing \'productId\' parameter!')
+
       const product = await ProductModel.findById(productId)
-      if (!product) throw new Error('Product not found.')
+      if (!product) throw new Error('Non-existent product.')
+
       return { status: 'success', payload: product }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
 
-  async createProduct (product) {
+  async createProduct (body) {
     try {
-      const productExists = await ProductModel.find({ name: { $eq: product.name } })
-      if (productExists.length > 0) throw new Error('Product already exists.')
-      await ProductModel.create(product)
-      return { status: 'success', message: 'Product has been created successfully.' }
+      if (Object.keys(body).length === 0) throw new Error('Missing or empty \'body product\' parameter!')
+      if (!body.name || !body.description || !body.code || !body.picture || !body.price || !body.stock || !body.category) throw new Error('Body product parameter is badly formed.')
+
+      const product = await ProductModel.findOne({ name: { $eq: body.name } })
+      if (product) throw new Error('Product already exists.')
+
+      body.stock = parseInt(body.stock)
+      body.price = parseInt(body.price)
+
+      const created = await ProductModel.create(body)
+
+      return { status: 'success', message: `Product ID ${created._id} has been created successfully.` }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
 
-  async updateProductById (productId, item) {
+  async updateProductById (productId, body) {
     try {
-      const updated = await ProductModel.findByIdAndUpdate(productId, { $set: item })
-      if (!updated) throw new Error('Product update error.')
+      if (!productId || Object.keys(body).length === 0) throw new Error('Missing or empty \'productId\' or \'body product\' parameter!')
+      if (!body.name || !body.description || !body.code || !body.picture || !body.price || !body.stock || !body.category) throw new Error('Body product parameter is badly formed.')
+
+      body.stock = parseInt(body.stock)
+      body.price = parseInt(body.price)
+
+      const product = await ProductModel.findById(productId)
+      if (!product) throw new Error('Non-existent product.')
+
+      await ProductModel.findByIdAndUpdate(productId, { $set: body })
+
       return { status: 'success', message: 'Product has been updated successfully.' }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
 
   async deleteProductById (productId) {
     try {
-      const productDeleted = await ProductModel.findByIdAndDelete(productId)
-      if (!productDeleted) throw new Error('Product delete error.')
-      const picture = productDeleted.picture
-      const index = picture.lastIndexOf('/') + 1
-      const pictureName = picture.substring(index, picture.length)
-      unlink(__dirname + '/uploads/' + pictureName, (err) => {
-        if (err) throw err
-        console.log(`Picture ${pictureName} has been deleted successfully from server.`)
-      })
+      if (!productId) throw new Error('Missing \'productId\' parameter!')
+
+      const product = await ProductModel.findById(productId)
+      if (!product) throw new Error('Non-existent product.')
+
+      await ProductModel.findByIdAndDelete(productId)
+      super.deleteFileFromServer(product)
+
       return { status: 'success', message: 'Product has been deleted successfully.' }
     } catch (err) {
-      console.log(`${err}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }

@@ -1,15 +1,5 @@
 [
   {
-    "name": "Final Shine",
-    "description": "Quick detailer con potenciadores de brillo, puede ser utilizado en mojado o seco, apto para remover polvillo y lubricar la clay bar.",
-    "category": "liquid waxes",
-    "code": "FS500",
-    "price": 530,
-    "stock": 100,
-    "picture": "http://localhost:8080/uploads/zcSc1NuHP7pPUZrRipccJK.jpg",
-    "id": 1
-  },
-  {
     "name": "Sandia Wax",
     "description": "Cera sintética que otorga un brillo profundo en un solo paso, de muy fácil aplicación y aroma a sandia.",
     "category": "liquid waxes",

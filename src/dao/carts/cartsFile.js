@@ -2,15 +2,16 @@ import FileContainer from '../../containers/fileContainer.js'
 import { __dirname } from '../../utils.js'
 import fs from 'fs'
 
-class CartsFile extends FileContainer {
+export default class CartsFile extends FileContainer {
   constructor () {
     super(__dirname + '/dao/db/carts.json')
   }
 
   async createCart () {
     try {
-      const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
+      const cartsFile = await fs.promises.readFile(this.filePath, 'utf-8')
       let carts = cartsFile ? JSON.parse(cartsFile) : []
+
       const cart = {
         id: 1,
         timestamp: Date.now(),
@@ -25,47 +26,11 @@ class CartsFile extends FileContainer {
 
       carts = [...carts, cart]
 
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(carts, null, 2))
-      return { status: 'success', message: `Cart has been created successfully with ID ${cart.id}` }
+      await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2))
+
+      return { status: 'success', message: `Cart with ID ${cart.id} has been created successfully.` }
     } catch (err) {
-      console.log(`Create cart error: ${err.message}`)
-      return { status: 'error', message: 'Create cart error.' }
-    }
-  }
-
-  async deleteCartById (cartId) {
-    try {
-      if (!cartId) throw new Error('Missing \'id\' parameter!')
-      const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      const carts = JSON.parse(cartsFile)
-
-      const cartIdFound = carts.find(c => c.id === cartId)
-      if (!cartIdFound) throw new Error(`CartId '${cartId}' not found.`)
-
-      const cart = carts.filter(c => c.id !== cartId)
-
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(cart, null, 2))
-      return { status: 'success', message: 'Cart has been deleted successfully.' }
-    } catch (err) {
-      console.log(`Delete cart error: ${err.message}`)
-      return { status: 'error', message: 'Delete cart error.' }
-    }
-  }
-
-  async getProductsByCartId (cartId) {
-    try {
-      if (!cartId) throw new Error('Missing \'id\' parameter!')
-
-      const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!cartsFile) throw new Error('The document is empty!')
-
-      const cart = JSON.parse(cartsFile).find(c => c.id === cartId)
-      if (!cart) throw new Error('Cart not found.')
-      const products = cart.products
-
-      return { status: 'success', payload: products }
-    } catch (err) {
-      console.log(`Read products cart error: ${err.message}`)
+      console.error(err)
       return { status: 'error', message: err.message }
     }
   }
@@ -73,60 +38,107 @@ class CartsFile extends FileContainer {
   async addProductToCart (cartId, productId) {
     try {
       if (!cartId || !productId) throw new Error('Missing \'cartId\' or \'productId\' parameter!')
+      cartId = parseInt(cartId)
+      productId = parseInt(productId)
+
+      const cartsFile = await fs.promises.readFile(this.filePath, 'utf-8')
+      let carts = cartsFile ? JSON.parse(cartsFile) : []
+
+      const cart = carts.find(c => c.id === cartId)
+      if (!cart) throw new Error('Non-existent cart.')
+
       const productsFile = await fs.promises.readFile(__dirname + '/dao/db/products.json', 'utf-8')
-      if (!productsFile) throw new Error('The document is empty!')
-      const products = JSON.parse(productsFile)
+      const products = productsFile ? JSON.parse(productsFile) : []
+
       const product = products.find(p => p.id === productId)
       if (!product) throw new Error('Non-existent product.')
 
-      const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!cartsFile) throw new Error('The document is empty!')
-      const aux = JSON.parse(cartsFile)
-      let carts = JSON.parse(cartsFile).filter(c => c.id !== cartId)
-      const cart = aux.find(c => c.id === cartId)
-      const exists = cart.products.find(p => p.id === productId)
-      if (exists) throw new Error('Product already exists in cart.')
-      cart.products = [
-        ...cart.products,
-        product
-      ]
+      carts = carts.filter(c => c.id !== cartId)
+      const productFound = cart.products.find(p => p.id === productId)
+      if (productFound) throw new Error('Product already exists in cart.')
 
-      carts = [
-        ...carts,
-        cart
-      ]
+      cart.products = [...cart.products, product]
+      carts = [...carts, cart]
 
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(carts, null, 2))
+      await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2))
+
       return { status: 'success', payload: 'Product has been added successfully.' }
     } catch (err) {
-      console.log(`Product add error: ${err.message}`)
-      return { status: 'error', message: 'Product add error.' }
+      console.error(err)
+      return { status: 'error', message: err.message }
+    }
+  }
+
+  async getProductsByCartId (cartId) {
+    try {
+      if (!cartId) throw new Error('Missing \'cartId\' parameter!')
+      cartId = parseInt(cartId)
+
+      const cartsFile = await fs.promises.readFile(this.filePath, 'utf-8')
+      const carts = cartsFile ? JSON.parse(cartsFile) : []
+
+      const cart = carts.find(c => c.id === cartId)
+      if (!cart) throw new Error('Non-existent cart.')
+
+      const products = cart.products
+
+      return { status: 'success', payload: products }
+    } catch (err) {
+      console.error(err)
+      return { status: 'error', message: err.message }
     }
   }
 
   async deleteProductFromCart (cartId, productId) {
     try {
       if (!cartId || !productId) throw new Error('Missing \'cartId\' or \'productId\' parameter!')
-      const cartsFile = await fs.promises.readFile(this.fileLocation, 'utf-8')
-      if (!cartsFile) throw new Error('The document is empty!')
-      const products = JSON.parse(cartsFile).find(c => c.id === cartId).products.filter(p => p.id !== productId)
+      cartId = parseInt(cartId)
+      productId = parseInt(productId)
 
-      let carts = JSON.parse(cartsFile).filter(c => c.id !== cartId)
-      const cart = JSON.parse(cartsFile).find(c => c.id === cartId)
+      const cartsFile = await fs.promises.readFile(this.filePath, 'utf-8')
+      let carts = cartsFile ? JSON.parse(cartsFile) : []
+
+      const cart = carts.find(c => c.id === cartId)
+      if (!cart) throw new Error('Non-existent cart.')
+
+      const product = cart.products.find(p => p.id === productId)
+      if (!product) throw new Error('Non-existent product in cart.')
+
+      const products = cart.products.filter(p => p.id !== productId)
+
+      carts = carts.filter(c => c.id !== cartId)
       cart.products = products
 
-      carts = [
-        ...carts,
-        cart
-      ]
+      carts = [...carts, cart]
 
-      await fs.promises.writeFile(this.fileLocation, JSON.stringify(carts, null, 2))
-      return { status: 'success', payload: 'Product has been deleted successfully.' }
+      await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2))
+
+      return { status: 'success', message: 'Product has been deleted successfully.' }
     } catch (err) {
-      console.log(`Product add error: ${err.message}`)
-      return { status: 'error', message: 'Product add error.' }
+      console.error(err)
+      return { status: 'error', message: err.message }
+    }
+  }
+
+  async deleteCartById (cartId) {
+    try {
+      if (!cartId) throw new Error('Missing \'id\' parameter!')
+      cartId = parseInt(cartId)
+
+      const cartsFile = await fs.promises.readFile(this.filePath, 'utf-8')
+      let carts = cartsFile ? JSON.parse(cartsFile) : []
+
+      const cart = carts.find(c => c.id === cartId)
+      if (!cart) throw new Error('Non-existent cart.')
+
+      carts = carts.filter(c => c.id !== cartId)
+
+      await fs.promises.writeFile(this.filePath, JSON.stringify(carts, null, 2))
+
+      return { status: 'success', message: 'Cart has been deleted successfully.' }
+    } catch (err) {
+      console.error(err)
+      return { status: 'error', message: err.message }
     }
   }
 }
-
-export default CartsFile
