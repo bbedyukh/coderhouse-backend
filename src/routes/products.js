@@ -11,7 +11,7 @@ products.get('/:id', getProduct)
 
 products.post('/', authMiddleware, uploadService.single('picture'), createProduct)
 
-products.put('/:id', authMiddleware, updateProduct)
+products.put('/:id', authMiddleware, uploadService.single('picture'), updateProduct)
 
 products.delete('/:id', authMiddleware, deleteProduct)
 

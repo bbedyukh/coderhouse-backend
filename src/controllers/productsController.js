@@ -4,24 +4,24 @@ dotenv.config()
 const service = new ProductsService()
 
 export const getProducts = async (req, res) => {
-  service.fetchProducts()
+  service.getProducts()
     .then(products => {
       res.status(200).json({ status: 'success', payload: products })
     })
     .catch(err => {
-      console.log(`Error: ${err}`)
+      console.error(err)
       res.status(500).json({ status: 'error', message: err.message })
     })
 }
 
 export const getProduct = async (req, res) => {
-  const productId = Number(req.params.id)
-  service.fetchProduct(productId)
+  const productId = req.params.id
+  service.getProduct(productId)
     .then(product => {
       res.status(200).json({ status: 'success', payload: product })
     })
     .catch(err => {
-      console.log(`Error: ${err}`)
+      console.error(err)
       res.status(500).json({ status: 'error', message: err.message })
     })
 }
@@ -32,35 +32,37 @@ export const createProduct = async (req, res) => {
   product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
   service.createProduct(product)
     .then(result => {
-      res.status(200).json({ status: 'success', payload: 'Product has been created successfully.' })
+      res.status(200).json({ status: 'success', payload: result })
     })
     .catch(err => {
-      console.log(`Error: ${err}`)
+      console.error(err)
       res.status(500).json({ status: 'error', message: err.message })
     })
 }
 
 export const updateProduct = async (req, res) => {
-  const id = Number(req.params.id)
+  const productId = req.params.id
+  const file = req.file
   const product = req.body
-  service.updateProduct(id, product)
+  product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+  service.updateProduct(productId, product)
     .then(result => {
-      res.status(200).json({ status: 'success', payload: 'Product has been updated successfully.' })
+      res.status(200).json({ status: 'success', message: 'Product has been updated successfully.' })
     })
     .catch(err => {
-      console.log(`Error: ${err}`)
+      console.error(err)
       res.status(500).json({ status: 'error', message: err.message })
     })
 }
 
 export const deleteProduct = async (req, res) => {
-  const productId = Number(req.params.id)
+  const productId = req.params.id
   service.deleteProduct(productId)
     .then(result => {
-      res.status(200).json({ status: 'success', payload: 'Product has been deleted successfully.' })
+      res.status(200).json({ status: 'success', message: 'Product has been deleted successfully.' })
     })
     .catch(err => {
-      console.log(`Error: ${err}`)
+      console.error(err)
       res.status(500).json({ status: 'error', message: err.message })
     })
 }

@@ -1,62 +1,68 @@
-import { unlink } from 'fs/promises'
+import fs from 'fs'
 import { __dirname } from '../utils.js'
-import { productsModel } from '../dao/models/products.js'
+import { ProductModel } from '../dao/models/Product.js'
 
 export default class ProductsService {
-  fetchProducts = async () => await productsModel.find()
-    // try {
-    //   const products = await select().table('products')
-    //   return { status: 'success', payload: products }
-    // } catch (err) {
-    //   console.log(`Error: ${err}`)
-    //   return { status: 'error', message: err.message }
-    // }
+  getProducts = async () => await ProductModel.find()
 
-  fetchProduct = async (id) => await productsModel.findById(id)
-    // try {
-    //   const product = await select().table('products').where('id', id).first()
-    //   if (!product) throw new Error('Product not found.')
-    //   return { status: 'success', payload: product }
-    // } catch (err) {
-    //   console.log(`Error: ${err}`)
-    //   return { status: 'error', message: err.message }
+  getProduct = async (productId) => {
+    if (!productId) throw new Error('Missing \'productId\' parameter!')
 
-  createProduct = async (product) => await productsModel.create(product)
-    // try {
-    //   const exists = await select().table('products').where('name', item.name).first()
-    //   if (exists) throw new Error('Product already exists.')
-    //   await insert(item).table('products')
-    //   return { status: 'success', payload: 'Product has been created successfully.' }
-    // } catch (err) {
-    //   console.log(`Error: ${err}`)
-    //   return { status: 'error', message: err.message }
-    // }
+    const product = await ProductModel.findById(productId)
+    if (!product) throw new Error('Non-existent product.')
 
-  updateProduct = async (id, item) => {
-    // try {
-    //   const updated = await update(item).table('products').where('id', id)
-    //   if (!updated) throw new Error('Product update error.')
-    //   return { status: 'success', payload: 'Product has been updated successfully.' }
-    // } catch (err) {
-    //   console.log(`Error: ${err}`)
-    //   return { status: 'error', message: err.message }
-    // }
+    return product
   }
 
-  deleteProduct = async (id) => {
-    // try {
-    //   const row = await select().table('products').where('id', id).first()
-    //   const product = JSON.parse(JSON.stringify(row))
-    //   const picture = product.picture
-    //   const index = picture.lastIndexOf('/') + 1
-    //   const pictureName = picture.substring(index, picture.length)
-    //   await unlink(__dirname + '/uploads/' + pictureName)
-    //   const deleted = await del().table('products').where('id', id)
-    //   if (!deleted) throw new Error('Product delete error.')
-    //   return { status: 'success', payload: 'Product has been deleted successfully.' }
-    // } catch (err) {
-    //   console.log(`Error: ${err}`)
-    //   return { status: 'error', message: err.message }
-    // }
+  createProduct = async (product) => {
+    if (Object.keys(product).length === 0) throw new Error('Missing or empty \'body\' product.')
+    let { name, category, description, code, picture, price, stock } = product
+    if (!name || !category || !description || !code || !picture || !price || !stock) throw new Error('Body product is badly formed.')
+
+    const productFound = await ProductModel.findOne({ name: { $eq: name } })
+    if (productFound) throw new Error('Product already exists.')
+
+    stock = parseInt(stock)
+    price = parseInt(price)
+
+    const productCreated = await ProductModel.create(product)
+    return productCreated
+  }
+
+  updateProduct = async (productId, body) => {
+    if (!productId || Object.keys(body).length === 0) throw new Error('Missing or empty \'productId\' or \'body\' product.')
+    let { name, category, description, code, picture, price, stock } = body
+    if (!name || !category || !description || !code || !picture || !price || !stock) throw new Error('Body product is badly formed.')
+
+    const productFound = await ProductModel.findOne({ _id: { $ne: productId }, name: { $eq: name } })
+    if (productFound) throw new Error('Product already exists.')
+
+    stock = parseInt(stock)
+    price = parseInt(price)
+
+    await ProductModel.findByIdAndUpdate(productId, { $set: body })
+  }
+
+  deleteProduct = async (productId) => {
+    if (!productId) throw new Error('Missing \'productId\' parameter!')
+
+    const product = await ProductModel.findById(productId)
+    if (!product) throw new Error('Non-existent product.')
+
+    await ProductModel.findByIdAndDelete(productId)
+    this.deleteFileFromServer(product)
+  }
+
+  deleteFileFromServer = async (product) => {
+    try {
+      if (!product) throw new Error('Missing \'product\' parameter')
+      const picture = product.picture
+      const index = picture.lastIndexOf('/') + 1
+      const pictureName = picture.substring(index, picture.length)
+      await fs.promises.unlink(__dirname + '/uploads/' + pictureName)
+      console.log(`Picture ${pictureName} has been deleted successfully from server.`)
+    } catch (err) {
+      console.error(err)
+    }
   }
 }
