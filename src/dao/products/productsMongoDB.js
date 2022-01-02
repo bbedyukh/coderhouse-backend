@@ -37,9 +37,9 @@ export default class ProductsMongoDB extends MongoDBContainer {
       body.stock = parseInt(body.stock)
       body.price = parseInt(body.price)
 
-      const created = await ProductModel.create(body)
+      const productCreated = await ProductModel.create(body)
 
-      return { status: 'success', message: `Product ID ${created._id} has been created successfully.` }
+      return { status: 'success', payload: productCreated }
     } catch (err) {
       console.error(err)
       return { status: 'error', message: err.message }
