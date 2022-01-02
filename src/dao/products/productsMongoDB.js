@@ -51,6 +51,9 @@ export default class ProductsMongoDB extends MongoDBContainer {
       if (!productId || Object.keys(body).length === 0) throw new Error('Missing or empty \'productId\' or \'body product\' parameter!')
       if (!body.name || !body.description || !body.code || !body.picture || !body.price || !body.stock || !body.category) throw new Error('Body product parameter is badly formed.')
 
+      const productFound = await ProductModel.findOne({ _id: { $ne: productId }, name: { $eq: body.name } })
+      if (productFound) throw new Error('Product already exists.')
+
       body.stock = parseInt(body.stock)
       body.price = parseInt(body.price)
 
