@@ -34,6 +34,9 @@ export default class ProductsService {
     let { name, category, description, code, picture, price, stock } = body
     if (!name || !category || !description || !code || !picture || !price || !stock) throw new Error('Body product is badly formed.')
 
+    const product = await ProductModel.findById(productId)
+    if (!product) throw new Error('Non-existent product.')
+    
     const productFound = await ProductModel.findOne({ _id: { $ne: productId }, name: { $eq: name } })
     if (productFound) throw new Error('Product already exists.')
 
