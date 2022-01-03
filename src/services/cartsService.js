@@ -2,7 +2,6 @@ import { CartModel } from '../dao/models/Cart.js'
 import { ProductModel } from '../dao/models/Product.js'
 
 export default class CartsService {
-
   createCart = async () => {
     const cartCreated = await CartModel.create({ products: [] })
     return cartCreated
@@ -53,5 +52,4 @@ export default class CartsService {
 
     await CartModel.findByIdAndDelete(cartId)
   }
-
 }

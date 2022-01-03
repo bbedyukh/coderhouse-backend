@@ -36,7 +36,7 @@ export default class ProductsService {
 
     const product = await ProductModel.findById(productId)
     if (!product) throw new Error('Non-existent product.')
-    
+
     const productFound = await ProductModel.findOne({ _id: { $ne: productId }, name: { $eq: name } })
     if (productFound) throw new Error('Product already exists.')
 
