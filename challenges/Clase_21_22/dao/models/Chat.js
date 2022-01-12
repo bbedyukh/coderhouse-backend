@@ -3,7 +3,7 @@ const { Schema, model } = mongoose
 
 export const ChatSchema = new Schema({
   author: { type: Schema.Types.ObjectId, ref: 'Author' },
-  text: { type: String, required: true }
+  message: { type: String, required: true }
 }, { timestamps: true })
 
 ChatSchema.set('toJSON', {

@@ -1,11 +1,26 @@
 import express from 'express'
-import { createChat, getChats } from '../controllers/chatsController.js'
-import uploadService from '../services/uploadService.js'
+import dotenv from 'dotenv'
+import ChatsService from '../services/chatsService.js'
+dotenv.config()
 
+const chatsService = new ChatsService()
 const chats = express.Router()
 
-chats.get('/', getChats)
+chats.get('/', (req, res) => {
+  chatsService.getChats()
+    .then(result => {
+      if (result.status === 'success') res.status(200).json(result)
+      else res.status(500).send(result)
+    })
+})
 
-chats.post('/', uploadService.single('avatar'), createChat)
+chats.post('/', (req, res) => {
+  const chat = req.body
+  chatsService.createChat(chat)
+    .then(result => {
+      if (result.status === 'success') res.status(200).json(result)
+      else res.status(500).send(result)
+    })
+})
 
 export default chats

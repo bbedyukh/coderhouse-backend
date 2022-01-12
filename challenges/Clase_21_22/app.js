@@ -1,26 +1,37 @@
 import express from 'express'
+import mongoose from 'mongoose'
 import cors from 'cors'
 import { generate, __dirname } from './utils.js'
 import { engine } from 'express-handlebars'
 import { Server } from 'socket.io'
-import { getConnection } from './dao/db/connection.js'
-import { createChat, getChats } from './controllers/chatsController.js'
-import { PORT } from './config/config.js'
+import { PORT, MONGO_URI } from './config/config.js'
+import ChatsService from './services/chatsService.js'
 import chats from './routes/chats.js'
 
+const chatsService = new ChatsService()
+
+export const getConnection = async () => {
+  try {
+    if (mongoose.connection.readyState === 0) {
+      await mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+    }
+  } catch (err) {
+    console.error(err)
+  }
+}
+
 const app = express()
-let server
-getConnection()
-  .then(() => {
-    server = app.listen(PORT, () => console.log(`Listening on ${PORT} port.`))
-  })
-  .catch((err) => console.error(err))
+const server = app.listen(PORT, () => {
+  console.log(`Listening on ${PORT} port.`)
+  getConnection()
+})
 
 const io = new Server(server)
 
 io.on('connection', socket => {
+  socket.emit('welcome', '¡Se ha establecido una conexión con socket.io!')
   console.log('Cliente conectado.')
-  getChats()
+  chatsService.getChats()
     .then(result => {
       io.emit('chats', result.payload)
     })
@@ -28,16 +39,12 @@ io.on('connection', socket => {
       console.error(err)
     })
   socket.on('chats', data => {
-    createChat(data)
-      .then(result => console.log(result.payload))
-      .then(() => {
-        getChats()
-          .then(result => {
-            io.emit('chats', result.payload)
-          })
-          .catch(err => {
-            console.error(err)
-          })
+    chatsService.getChats()
+      .then(result => {
+        io.emit('chats', result.payload)
+      })
+      .catch(err => {
+        console.error(err)
       })
   })
 })
@@ -50,11 +57,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 app.use(express.static(__dirname + '/public'))
 
-app.get('/', (req, res) => {
-  res.render('index')
-})
-
-app.get('/api/chats', chats)
+app.use('/api/chats', chats)
 
 app.get('/api/products-test', (req, res) => {
   try {
@@ -64,4 +67,8 @@ app.get('/api/products-test', (req, res) => {
     console.error(err)
     res.send({ status: 'error', message: err.message })
   }
+})
+
+app.get('/', (req, res) => {
+  res.render('index')
 })
