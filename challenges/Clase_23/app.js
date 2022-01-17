@@ -13,7 +13,7 @@ import chats from './routes/chats.js'
 import { UserModel } from './dao/models/User.js'
 import uploadService from './services/uploadService.js'
 
-const expires = 60
+const expires = 600
 const chatsService = new ChatsService()
 
 export const getConnection = async () => {
@@ -44,10 +44,17 @@ io.on('connection', socket => {
     .catch(err => {
       console.error(err)
     })
-  socket.on('chats', data => {
-    chatsService.getChats()
+  socket.on('chats', async data => {
+    chatsService.createChat(data)
       .then(result => {
         io.emit('chats', result.payload)
+        chatsService.getChats()
+          .then(result => {
+            io.emit('chats', result.payload)
+          })
+          .catch(err => {
+            console.error(err)
+          })
       })
       .catch(err => {
         console.error(err)
@@ -61,6 +68,7 @@ app.set('views', './views')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cors())
+app.use('/uploads/', express.static(__dirname + '/uploads'))
 app.use(express.static(__dirname + '/public'))
 
 app.use(session({
@@ -74,16 +82,49 @@ app.use(session({
 app.use('/api/chats', chats)
 
 app.post('/api/register', uploadService.single('avatar'), async (req, res) => {
-  const user = req.body
-  const userSaved = await UserModel.save(user)
-  res.send({ status: 'success', payload: userSaved })
+  try {
+    const file = req.file
+    const user = req.body
+    user.age = parseInt(user.age)
+    user.avatar = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+
+    const emailFound = await UserModel.findOne({ email: user.email })
+    if (emailFound) throw new Error('Email already in use.')
+
+    const usernameFound = await UserModel.findOne({ username: user.username })
+    if (usernameFound) throw new Error('Username already in use.')
+
+    await UserModel.create(user)
+    res.send({ status: 'success', message: 'Registration has been successfully.' })
+  } catch (err) {
+    console.error(err)
+    res.status(400).send({ status: 'error', message: err.message })
+  }
 })
 
 app.post('/api/login', async (req, res) => {
-  const { email, password } = req.body
-  if (!email || !password) return res.status(400).send({ status: 'error', message: 'Data incomplete.' })
-  const user = await UserModel.find({ email: email })
-  if (!user) return res.status(400).send({ status: 'error', message: 'User does not exist.' })
+  try {
+    const { email, password } = req.body
+    if (!email || !password) throw new Error('Username or password is not complete.')
+    const user = await UserModel.findOne({ email: email })
+    if (!user) throw new Error('User not found.')
+    if (user.password !== password) throw new Error('Incorrect password.')
+    req.session.user = {
+      username: user.username,
+      email: user.email
+    }
+    res.send({ status: 'success' })
+  } catch (err) {
+    console.error(err)
+    res.status(400).send({ status: 'error', message: err.message })
+  }
+})
+
+app.get('/api/login', (req, res) => {
+  if (req.session.user)
+    res.send(req.session.user)
+  else
+    res.send({ status: 'error', message: 'You are not log in.' })
 })
 
 app.post('/api/logout', (req, res) => {
@@ -101,9 +142,7 @@ app.get('/register', (req, res) => {
 })
 
 app.get('/chat', (req, res) => {
-  if (req.session.user)
-    res.render('chat')
-  else res.render('login')
+  res.render('chat')
 })
 
 app.get('/logout', (req, res) => {

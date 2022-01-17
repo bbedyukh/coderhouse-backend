@@ -16,16 +16,12 @@ export default class ChatsService {
     try {
       if (!chat) throw new Error('Missing parameter chat.')
 
-      const userData = {
-        ...chat,
-        age: parseInt(chat.age)
-      }
-
-      const userCreated = await UserModel.create(userData)
+      const user = await UserModel.findOne({ email: chat.user.email })
+      if (!user) throw new Error('User not found.')
 
       const chatData = {
-        user: userCreated,
-        text: chat.text
+        user: user,
+        text: chat.message
       }
 
       const chatCreated = await ChatModel.create(chatData)
