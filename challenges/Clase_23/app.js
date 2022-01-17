@@ -86,7 +86,7 @@ app.post('/api/register', uploadService.single('avatar'), async (req, res) => {
     const file = req.file
     const user = req.body
     user.age = parseInt(user.age)
-    user.avatar = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+    user.avatar = `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}`
 
     const emailFound = await UserModel.findOne({ email: user.email })
     if (emailFound) throw new Error('Email already in use.')
