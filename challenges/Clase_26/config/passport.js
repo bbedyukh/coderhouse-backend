@@ -1,6 +1,6 @@
-import passport from "passport"
+import passport from 'passport'
 import fbStrategy from 'passport-facebook'
-import { userModel } from '../models/User.js'
+import { UserModel } from '../dao/models/User.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -10,13 +10,14 @@ const initializePassportConfig = () => {
   passport.use('facebook', new FacebookStrategy({
     clientID: process.env.FACEBOOK_CLIENT_ID,
     clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
-    callbackURL: 'https://d2da-2800-810-487-9071-8bea-2e94-6e5a-ce1e.ngrok.io/auth/facebook/callback',
-    profileFields: ['emails']
+    callbackURL: 'https://e852-2800-810-487-1618-1936-2ae7-660f-23aa.ngrok.io/home',
+    profileFields: ['id', 'displayName', 'photos', 'emails']
   }, async (accessToken, refreshToken, profile, done) => {
     try {
-      console.log(accessToken)
-      console.log(profile)
-      const user = await userModel.findOne({ email: profile.emails[0].value })
+      const user = await UserModel.findOne({ email: profile.emails[0].value })
+      if (!user) throw new Error('User not found.')
+      const fullName = profile.displayName.split(' ')
+      await UserModel.findByIdAndUpdate(user._id, { avatar: profile.photos[0].value, firstName: fullName[0], lastName: fullName[1] })
       done(null, user)
     } catch (err) {
       done(err)
@@ -26,9 +27,9 @@ const initializePassportConfig = () => {
   passport.serializeUser((user, done) => {
     done(null, user._id)
   })
-  
+
   passport.deserializeUser((id, done) => {
-    userModel.findById(id, done)
+    UserModel.findById(id, done)
   })
 }
 
