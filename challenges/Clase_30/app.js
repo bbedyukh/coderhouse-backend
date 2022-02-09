@@ -1,5 +1,4 @@
 import express from 'express'
-import minimist from 'minimist'
 import os from 'os'
 import { fork } from 'child_process'
 
@@ -29,6 +28,6 @@ app.get('/info', (req, res) => {
 app.get('/api/randoms', (req, res) => {
   const calculus = fork('calculus', [req.query.cant])
   calculus.on('message', (data) => {
-    res.send({ numbers: data })
+    res.send({ port: PORT, numbers: data })
   })
 })
