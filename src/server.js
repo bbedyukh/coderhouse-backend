@@ -32,7 +32,7 @@ app.use('/api/cart', carts)
 app.use((req, res) => {
   const date = new Date().toISOString()
   console.log(`[${date}] - ${req.method} ${req.path} not implemented.`)
-  res.status(404).json({ error: -2, descripcion: `Path ${req.path} method ${req.method} not implemented.` })
+  res.status(404).json({ error: -2, description: `Path ${req.path} method ${req.method} not implemented.` })
 })
 
 export default app
