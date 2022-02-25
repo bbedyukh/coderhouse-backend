@@ -1,6 +1,5 @@
 import ProductsService from '../services/productsService.js'
-import dotenv from 'dotenv'
-dotenv.config()
+import { PORT } from '../config/config.js'
 const service = new ProductsService()
 
 export const getProducts = async (req, res) => {
@@ -29,7 +28,7 @@ export const getProduct = async (req, res) => {
 export const createProduct = async (req, res) => {
   const file = req.file
   const product = req.body
-  product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+  product.picture = `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}`
   service.createProduct(product)
     .then(result => {
       res.status(200).json({ status: 'success', payload: result })
