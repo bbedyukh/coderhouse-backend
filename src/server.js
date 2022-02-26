@@ -6,6 +6,9 @@ import products from './routes/products.js'
 import carts from './routes/cart.js'
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import { connectMongoDB } from './dao/db/connection.js'
+import loggerHandler from './middlewares/loggerHandler.js'
+
+const logger = loggerHandler()
 
 export default class Server {
   constructor () {
@@ -35,7 +38,15 @@ export default class Server {
     this.routes()
     this.middlewares()
     this.database()
-    const server = this.app.listen(PORT, () => console.log(`Server listen on port ${PORT}`))
-    server.on('error', err => console.error(`Error server: ${err}`))
+    const server = this.app.listen(PORT, () => {
+      const message = `| Server listen on port ${PORT} |`
+      const link = `| - http://localhost:${PORT}    |`
+      console.log('-'.repeat(message.length))
+      console.log(message)
+      console.log(link)
+      console.log('-'.repeat(message.length))
+      logger.info(`Server listen on port ${PORT}`)
+    })
+    server.on('error', err => logger.error(`Error server: ${err}`))
   }
 }

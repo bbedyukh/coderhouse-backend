@@ -1,6 +1,9 @@
+import loggerHandler from './loggerHandler.js'
+const logger = loggerHandler()
+
 const notFoundHandler = (req, res) => {
-  // console.log(`[${date}] - ${req.method} ${req.path} not implemented.`)
-  res.status(404).json({ error: -2, description: `Path ${req.path} method ${req.method} not implemented.` })
+  logger.warn(`${req.method} method in path ${req.path} not implemented.`)
+  res.status(404).json({ status: 'error', description: `${req.method} method in path ${req.path} not implemented.` })
 }
 
 export default notFoundHandler
