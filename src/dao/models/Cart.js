@@ -1,16 +1,10 @@
-import mongoose from 'mongoose'
-const { Schema, model } = mongoose
+import { Schema, model } from 'mongoose'
 
 const CartSchema = new Schema({
-  products: [{ type: Schema.Types.ObjectId, ref: 'Product' }]
-}, { timestamps: true })
+  products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+  user: { type: Schema.Types.ObjectId, ref: 'User', unique: true }
+}, { timestamps: true, versionKey: false })
 
-CartSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id
-    delete returnedObject._id
-    delete returnedObject.__v
-  }
-})
+const Cart = model('Cart', CartSchema)
 
-export const CartModel = model('Cart', CartSchema)
+export default Cart

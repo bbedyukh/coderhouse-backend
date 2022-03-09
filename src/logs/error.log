@@ -1,0 +1,90 @@
+{"level":"error","timestamp":"2022-03-07T01:47:13.717Z"}
+{"level":"error","timestamp":"2022-03-07T01:48:29.174Z"}
+{"level":"error","timestamp":"2022-03-07T13:17:11.085Z"}
+{"level":"error","timestamp":"2022-03-07T18:32:38.068Z"}
+{"level":"error","timestamp":"2022-03-07T18:34:00.223Z"}
+{"level":"error","timestamp":"2022-03-07T18:34:24.845Z"}
+{"level":"error","timestamp":"2022-03-07T18:43:24.117Z"}
+{"level":"error","timestamp":"2022-03-07T18:51:53.972Z"}
+{"level":"error","timestamp":"2022-03-07T18:53:51.448Z"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"level":"error","timestamp":"2022-03-07T20:39:33.402Z"}
+{"level":"error","timestamp":"2022-03-07T20:40:41.952Z"}
+{"level":"error","timestamp":"2022-03-07T20:40:49.349Z"}
+{"level":"error","timestamp":"2022-03-07T20:42:02.965Z"}
+{"level":"error","timestamp":"2022-03-07T20:42:21.787Z"}
+{"level":"error","timestamp":"2022-03-07T20:44:26.346Z"}
+{"level":"error","timestamp":"2022-03-07T20:46:50.876Z"}
+{"level":"error","timestamp":"2022-03-07T20:54:42.862Z"}
+{"level":"error","timestamp":"2022-03-07T20:57:14.442Z"}
+{"level":"error","timestamp":"2022-03-07T20:58:01.299Z"}
+{"level":"error","timestamp":"2022-03-07T20:59:53.275Z"}
+{"level":"error","timestamp":"2022-03-07T21:00:21.768Z"}
+{"level":"error","timestamp":"2022-03-07T21:00:25.827Z"}
+{"level":"error","timestamp":"2022-03-07T21:08:41.202Z"}
+{"level":"error","timestamp":"2022-03-07T21:08:43.614Z"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"level":"error","timestamp":"2022-03-07T21:19:28.218Z"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"level":"error","timestamp":"2022-03-07T21:22:40.541Z"}
+{"level":"error","timestamp":"2022-03-07T21:27:29.313Z"}
+{"level":"error","timestamp":"2022-03-07T21:28:45.433Z"}
+{"level":"error","timestamp":"2022-03-07T22:00:42.406Z"}
+{"level":"error","timestamp":"2022-03-07T22:42:38.910Z"}
+{"level":"error","timestamp":"2022-03-08T00:19:31.127Z"}
+{"level":"error","timestamp":"2022-03-08T00:19:51.487Z"}
+{"level":"error","timestamp":"2022-03-08T00:21:38.593Z"}
+{"level":"error","timestamp":"2022-03-08T00:45:51.571Z"}
+{"code":11000,"index":0,"keyPattern":{"user":1},"keyValue":{"user":"622677440d9ca060f3a64456"},"level":"error","timestamp":"2022-03-08T00:56:33.078Z"}
+{"code":11000,"index":0,"keyPattern":{"user":1},"keyValue":{"user":"622677440d9ca060f3a64456"},"level":"error","timestamp":"2022-03-08T00:58:17.759Z"}
+{"level":"error","timestamp":"2022-03-08T01:07:17.427Z"}
+{"level":"error","timestamp":"2022-03-08T01:07:32.330Z"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Promise]\"","value":"[object Promise]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Promise]\"","value":"[object Promise]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Promise]\"","value":"[object Promise]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Promise]\"","value":"[object Promise]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Promise]\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Promise]\"","value":"[object Promise]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"undefined\"","value":"undefined","valueType":"string"}
+{"level":"error","timestamp":"2022-03-08T01:48:38.031Z"}
+{"level":"error","timestamp":"2022-03-08T19:26:48.136Z"}
+{"level":"error","message":"_Purchase.default.create(...).populate is not a function","timestamp":"2022-03-08T19:27:26.199Z"}
+{"level":"error","timestamp":"2022-03-08T22:30:54.003Z"}
+{"_message":"User validation failed","errors":{"role":{"kind":"required","message":"Path `role` is required.","name":"ValidatorError","path":"role","properties":{"message":"Path `role` is required.","path":"role","type":"required","value":null},"value":null}},"level":"error","message":"User validation failed: role: Path `role` is required.","name":"ValidationError","timestamp":"2022-03-08T22:39:39.283Z"}
+{"_message":"User validation failed","errors":{"role":{"kind":"required","message":"Path `role` is required.","name":"ValidatorError","path":"role","properties":{"message":"Path `role` is required.","path":"role","type":"required","value":null},"value":null}},"level":"error","message":"User validation failed: role: Path `role` is required.","name":"ValidationError","timestamp":"2022-03-08T22:39:58.665Z"}
+{"level":"error","message":"Media urls:  are invalid. Please use only valid http and https urls","timestamp":"2022-03-08T22:48:08.233Z"}
+{"level":"error","message":"Twilio could not find a Channel with the specified From address","timestamp":"2022-03-08T22:50:06.642Z"}
+{"level":"error","message":"Math.sqrt(...).join is not a function","timestamp":"2022-03-08T23:05:36.676Z"}
+{"level":"error","message":"Math.sqrt(...).join is not a function","timestamp":"2022-03-08T23:05:43.668Z"}
+{"level":"error","message":"\"\".concat(...).concat(...).concat(...).join is not a function","timestamp":"2022-03-08T23:06:53.698Z"}
+{"level":"error","message":"\"\".concat(...).concat(...).concat(...).join is not a function","timestamp":"2022-03-08T23:08:29.601Z"}
+{"level":"error","message":"The 'To' number whatsapp:undefined is not a valid phone number.","timestamp":"2022-03-08T23:34:06.974Z"}
+{"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:34:06.991Z"}
+{"level":"error","timestamp":"2022-03-08T23:36:30.793Z"}
+{"level":"error","timestamp":"2022-03-08T23:36:33.148Z"}
+{"level":"error","message":"The 'To' number whatsapp:undefined is not a valid phone number.","timestamp":"2022-03-08T23:36:37.596Z"}
+{"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:36:37.619Z"}
+{"level":"error","timestamp":"2022-03-08T23:37:30.865Z"}
+{"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:37:37.373Z"}
+{"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:39:27.181Z"}
+{"level":"error","message":"The 'To' number 5491167609138 is not a valid phone number.","timestamp":"2022-03-08T23:40:29.211Z"}
+{"level":"error","message":"The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.","timestamp":"2022-03-08T23:42:31.717Z"}
+{"level":"error","timestamp":"2022-03-08T23:44:33.684Z"}
+{"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:47:24.515Z"}
+{"level":"error","timestamp":"2022-03-09T21:14:35.068Z"}
