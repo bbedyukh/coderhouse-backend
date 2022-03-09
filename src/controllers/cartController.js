@@ -3,8 +3,32 @@ import CartService from '../services/cartService.js'
 const service = new CartService()
 const logger = loggerHandler()
 
+export const fetchCart = (req, res) => {
+  const { cartId } = req.params
+  service.getCart(cartId)
+    .then(cart => {
+      res.json({ cart })
+    })
+    .catch(err => {
+      logger.error(err)
+      res.status(500).json({ message: err.message })
+    })
+}
+
+export const fetchCarts = (req, res) => {
+  service.getCarts()
+    .then(carts => {
+      res.json({ carts })
+    })
+    .catch(err => {
+      logger.error(err)
+      res.status(500).json({ message: err.message })
+    })
+}
+
 export const createCart = (req, res) => {
-  service.createCart()
+  const { userId } = req.body
+  service.createCart(userId)
     .then(cart => {
       res.json({ cart })
     })
@@ -27,7 +51,7 @@ export const addProduct = async (req, res) => {
     })
 }
 
-export const getProducts = async (req, res) => {
+export const fetchProducts = async (req, res) => {
   const cartId = req.params.cartId
   service.getProducts(cartId)
     .then(products => {
@@ -44,7 +68,7 @@ export const deleteProduct = async (req, res) => {
   const productId = req.params.productId
   service.deleteProduct(cartId, productId)
     .then(() => {
-      res.status(204).json({ message: 'Product has been removed from the cart successfully.' })
+      res.sendStatus(204)
     })
     .catch(err => {
       logger.error(err)
@@ -56,7 +80,7 @@ export const deleteCart = async (req, res) => {
   const cartId = req.params.cartId
   service.deleteCart(cartId)
     .then(() => {
-      res.status(204).json({ message: 'Cart has been deleted successfully.' })
+      res.sendStatus(204)
     })
     .catch(err => {
       logger.error(err)

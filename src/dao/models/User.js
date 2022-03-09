@@ -11,7 +11,8 @@ const UserSchema = new Schema({
   address: { type: String, required: true },
   age: { type: Number, required: true, trim: true },
   avatar: { type: String },
-  role: { type: Schema.Types.ObjectId, ref: 'Role', required: true }
+  role: { type: Schema.Types.ObjectId, ref: 'Role', required: true },
+  cart: { type: Schema.Types.ObjectId, ref: 'Cart' }
 }, { timestamps: true, versionKey: false })
 
 UserSchema.statics.encryptPassword = async (password) => {

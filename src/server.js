@@ -8,6 +8,8 @@ import productRouter from './routes/product.routes.js'
 import cartRouter from './routes/cart.routes.js'
 import sessionRouter from './routes/session.routes.js'
 import userRouter from './routes/user.routes.js'
+import categoryRouter from './routes/category.routes.js'
+import purchaseRouter from './routes/purchase.routes.js'
 
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import loggerHandler from './middlewares/loggerHandler.js'
@@ -16,7 +18,6 @@ import { connectMongoDB } from './dao/db/connection.js'
 import { PORT } from './config/config.js'
 import { __dirname } from './utils.js'
 import pkg from '../package.json'
-import categoryRouter from './routes/category.routes.js'
 
 const logger = loggerHandler()
 
@@ -47,9 +48,10 @@ export default class Server {
       })
     })
     this.app.use('/api', sessionRouter)
+    this.app.use('/api/purchases', purchaseRouter)
     this.app.use('/api/categories', categoryRouter)
     this.app.use('/api/products', productRouter)
-    this.app.use('/api/cart', cartRouter)
+    this.app.use('/api/carts', cartRouter)
     this.app.use('/api/users', userRouter)
     this.app.use(notFoundHandler)
   }

@@ -1,9 +1,32 @@
 import Cart from '../dao/models/Cart.js'
 import Product from '../dao/models/Product.js'
+import User from '../dao/models/User.js'
 
 export default class CartService {
-  async createCart () {
-    const cartCreated = await Cart.create({ products: [] })
+  async getCart (cartId) {
+    if (!cartId) throw new Error('Missing \'cartId\' parameter!')
+
+    const cartFound = await Cart.findById(cartId).populate('products')
+    if (!cartFound) throw new Error('Cart not found.')
+
+    return cartFound
+  }
+
+  async getCarts () {
+    return await Cart.find()
+  }
+
+  async createCart (userId) {
+    if (!userId) throw new Error('Missing \'userId\' parameter!')
+
+    const userFound = await User.findById(userId)
+    if (!userFound) throw new Error('User not found.')
+
+    const cartCreated = await Cart.create({ products: [], user: userFound._id })
+
+    userFound.cart = cartCreated._id
+    userFound.save()
+
     return cartCreated
   }
 
@@ -49,6 +72,12 @@ export default class CartService {
 
     const cart = await Cart.findById(cartId)
     if (!cart) throw new Error('Non-existent cart.')
+
+    const userFound = await User.findById(cart.user)
+    if (!userFound) throw new Error('User not found.')
+
+    userFound.cart = undefined
+    userFound.save()
 
     await Cart.findByIdAndDelete(cartId)
   }

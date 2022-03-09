@@ -27,8 +27,11 @@ form.addEventListener('submit', (e) => {
         if (result.status === 200) {
           location.replace('home.html')
         } else {
-          window.alert(`Error: ${result.message}`)
+          return result.json()
         }
+      })
+      .then(response => {
+        window.alert(`Error: ${response.message}`)
       })
   }
 })

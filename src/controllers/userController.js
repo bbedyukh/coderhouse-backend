@@ -3,8 +3,20 @@ import UserService from '../services/userService.js'
 const service = new UserService()
 const logger = loggerHandler()
 
-export const getUsers = (req, res) => {
+export const fetchUsers = (req, res) => {
   service.getUsers()
+    .then(users => {
+      res.json({ users })
+    })
+    .catch(err => {
+      logger.error(err)
+      res.status(500).json({ message: err.message })
+    })
+}
+
+export const fetchUser = (req, res) => {
+  const { userId } = req.params
+  service.getUser(userId)
     .then(user => {
       res.json({ user })
     })

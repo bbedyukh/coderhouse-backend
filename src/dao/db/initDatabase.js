@@ -1,13 +1,16 @@
 import Role, { ROLES } from '../models/Role.js'
 import User from '../models/User.js'
-import { MAILER_AUTH } from '../../config/config.js'
+import Product from '../models/Product.js'
+import { MAILER_AUTH, PORT } from '../../config/config.js'
 import loggerHandler from '../../middlewares/loggerHandler.js'
 import Category from '../models/Category.js'
+
 const logger = loggerHandler()
 
 const initDatabase = async () => {
   try {
     await createCategories()
+    await createProducts()
     await createRoles()
     await createUsers()
   } catch (err) {
@@ -49,13 +52,42 @@ const createUsers = async () => {
     email: MAILER_AUTH.USER,
     password: await User.encryptPassword('123'),
     username: 'bbedyukh',
-    phone: '5491167609138',
+    phone: '+541167609138',
     address: 'Avenida Rivadavia 1234',
     age: 27,
-    role: await Role.findOne({ name: ROLES.ADMINISTRATOR })
+    role: await Role.findOne({ name: ROLES.ADMINISTRATOR }),
+    avatar: `http://localhost:${PORT}/uploads/4q5MLFM2LZYhEo2r75esQa.jpg`
   }).save()
 
   logger.info('Users has been initialized successfuly.')
+}
+
+const createProducts = async () => {
+  const count = await Product.estimatedDocumentCount()
+  if (count > 0) return
+
+  await Promise.all([
+    new Product({
+      name: 'Final Shine',
+      description: 'Quick detailer con potenciadores de brillo, puede ser utilizado en mojado o seco, apto para remover polvillo y lubricar la clay bar.',
+      category: await Category.findOne({ name: 'liquid waxes' }),
+      code: 'FS500',
+      price: 530,
+      stock: 100,
+      picture: `http://localhost:${PORT}/uploads/1n84DP1SfiWh0C99BoejwTT9.jpg`
+    }).save(),
+    new Product({
+      name: 'Sandia Wax',
+      description: 'Cera sintetica que otorga un brillo profundo en un solo paso, de muy facil aplicación y aroma a sandia.',
+      category: await Category.findOne({ name: 'liquid waxes' }),
+      code: 'SW500',
+      price: 550,
+      stock: 100,
+      picture: `http://localhost:${PORT}/uploads/2JZGevGx3ZI2aOxQ1omZJw.jpg`
+    }).save()
+  ])
+
+  logger.info('Products has been initialized successfuly.')
 }
 
 export default initDatabase

@@ -6,7 +6,9 @@ import User from '../dao/models/User.js'
 import { cookieExtractor } from '../utils.js'
 import Role, { ROLES } from '../dao/models/Role.js'
 import loggerHandler from '../middlewares/loggerHandler.js'
-import { mail, transport } from '../services/mailService.js'
+import MailService from '../services/mailService.js'
+
+const mailService = new MailService()
 const logger = loggerHandler()
 
 const LocalStrategy = local.Strategy
@@ -18,8 +20,6 @@ const initializePassport = () => {
     try {
       const { firstName, lastName, email, phone, prefix, address, age } = req.body
       if (!req.file) return done(null, false, { message: 'Couldn\'t upload avatar.' })
-
-      console.log('phone', phone)
 
       const userFound = await User.findOne({ email })
       if (userFound) return done(null, false, { message: 'User already exists.' })
@@ -39,7 +39,33 @@ const initializePassport = () => {
 
       const savedUser = await newUser.save()
 
-      await transport.sendMail(mail(savedUser))
+      const mailProps = {
+        subject: 'New register!',
+        html: `
+        <h1>You have successfully registered.</h1>
+      
+        Remember your data.<br /><br />
+      
+        <span><strong>Firstname: </strong> ${savedUser.firstName}</span><br />
+        <span><strong>Lastname: </strong> ${savedUser.lastName}</span><br />
+        <span><strong>Email: </strong> ${savedUser.email}</span><br />
+        <span><strong>Password: </strong> <u>For security it cannot be displayed</u>.</span><br />
+        <span><strong>Username: </strong> ${savedUser.username}</span><br />
+        <span><strong>Phone: </strong> ${savedUser.phone}</span><br />
+        <span><strong>Address: </strong> ${savedUser.address}</span><br />
+        <span><strong>Age: </strong> ${savedUser.age}</span><br />
+        <span><strong>Avatar: </strong> <a href="${savedUser.avatar}">${savedUser.avatar}</a></span><br />
+        <span><strong>Role: </strong> ${savedUser.role.name}</span><br /><br />
+      
+        Thank you,<br />
+        See you!
+        `
+      }
+
+      mailService.sendMail(mailProps.subject, mailProps.html)
+
+      logger.info(`A new user with mail <${savedUser.email}> and role <${savedUser.role.name}> has been registered.`)
+      logger.info('A successful registration email has been sent to the new user.')
 
       return done(null, savedUser)
     } catch (err) {
@@ -56,7 +82,7 @@ const initializePassport = () => {
       const matchPassword = await User.comparePassword(password, userFound.password)
       if (!matchPassword) return done(null, false, { message: 'Username or password invalid.' })
 
-      return done(null, { email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
+      return done(null, { _id: userFound._id, email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
     } catch (err) {
       logger.error(err)
       return done(err)
@@ -68,7 +94,7 @@ const initializePassport = () => {
       const userFound = await User.findOne({ email: jwtPayload.email }).populate('role')
       if (!userFound) return done(null, false, { message: 'User not found.' })
 
-      return done(null, { email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
+      return done(null, { _id: userFound._id, email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
     } catch (err) {
       logger.error(err)
       return done(err)
@@ -80,7 +106,6 @@ const initializePassport = () => {
   })
 
   passport.deserializeUser(async (id, done) => {
-    console.log('deserializeUser', id)
     const result = await User.findById({ _id: id })
     done(null, result)
   })
