@@ -888,3 +888,11 @@
 {"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-03-09T00:00:54.406Z"}
 {"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-03-09T00:00:54.761Z"}
 {"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-03-09T00:00:55.171Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-03-09T21:13:32.603Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-03-09T21:13:34.500Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-03-09T21:15:44.483Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-03-09T21:15:46.321Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-03-09T21:15:50.017Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-03-09T21:15:50.656Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-03-09T21:15:50.999Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-03-09T21:15:51.417Z"}

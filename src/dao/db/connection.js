@@ -12,7 +12,7 @@ export const connectMongoDB = async () => {
       logger.info('A connection to MongoDB has been established.')
       initDatabase()
     } catch (err) {
-      logger.error(err)
+      logger.error(err.message)
     }
   }
 }

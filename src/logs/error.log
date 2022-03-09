@@ -87,3 +87,4 @@
 {"level":"error","message":"The number  is unverified. Trial accounts cannot send messages to unverified numbers; verify  at twilio.com/user/account/phone-numbers/verified, or purchase a Twilio number to send messages to unverified numbers.","timestamp":"2022-03-08T23:42:31.717Z"}
 {"level":"error","timestamp":"2022-03-08T23:44:33.684Z"}
 {"level":"error","message":"Permission to send an SMS has not been enabled for the region indicated by the 'To' number: +59894916015.","timestamp":"2022-03-08T23:47:24.515Z"}
+{"level":"error","timestamp":"2022-03-09T21:14:35.068Z"}

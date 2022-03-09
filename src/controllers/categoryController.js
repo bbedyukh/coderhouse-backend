@@ -10,7 +10,7 @@ export const createCategory = (req, res) => {
       res.json({ category })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -22,7 +22,7 @@ export const getCategory = async (req, res) => {
       res.json({ category })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -33,7 +33,7 @@ export const getCategories = async (req, res) => {
       res.json({ categories })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -46,7 +46,7 @@ export const updateCategory = async (req, res) => {
       res.json({ category })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -58,7 +58,7 @@ export const deleteCategory = async (req, res) => {
       res.sendStatus(204)
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }

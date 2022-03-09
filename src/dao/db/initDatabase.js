@@ -1,9 +1,9 @@
-import Role, { ROLES } from '../models/Role.js'
 import User from '../models/User.js'
 import Product from '../models/Product.js'
+import Category from '../models/Category.js'
+import Role, { ROLES } from '../models/Role.js'
 import { MAILER_AUTH, PORT } from '../../config/config.js'
 import loggerHandler from '../../middlewares/loggerHandler.js'
-import Category from '../models/Category.js'
 
 const logger = loggerHandler()
 

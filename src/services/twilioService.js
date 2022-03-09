@@ -23,7 +23,6 @@ export default class TwilioService {
   }
 
   async sendSMSMessage (message, userPhone) {
-    console.log(TWILIO.PHONE_NUMBER, userPhone, message)
     try {
       await this.client.messages.create({
         from: `${TWILIO.PHONE_NUMBER}`,

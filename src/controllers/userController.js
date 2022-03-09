@@ -9,7 +9,7 @@ export const fetchUsers = (req, res) => {
       res.json({ users })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -21,7 +21,7 @@ export const fetchUser = (req, res) => {
       res.json({ user })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }

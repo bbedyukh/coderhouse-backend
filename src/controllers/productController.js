@@ -16,7 +16,7 @@ export const createProduct = async (req, res) => {
       res.json({ product })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -27,7 +27,7 @@ export const getProducts = async (req, res) => {
       res.json({ products })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -39,7 +39,7 @@ export const getProduct = async (req, res) => {
       res.json({ product })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -56,7 +56,7 @@ export const updateProduct = async (req, res) => {
       res.json({ product })
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }
@@ -68,7 +68,7 @@ export const deleteProduct = async (req, res) => {
       res.sendStatus(204)
     })
     .catch(err => {
-      logger.error(err)
+      logger.error(err.message)
       res.status(500).json({ message: err.message })
     })
 }

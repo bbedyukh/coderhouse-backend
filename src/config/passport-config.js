@@ -69,7 +69,7 @@ const initializePassport = () => {
 
       return done(null, savedUser)
     } catch (err) {
-      logger.error(err)
+      logger.error(err.message)
       return done(err)
     }
   }))
@@ -84,7 +84,7 @@ const initializePassport = () => {
 
       return done(null, { _id: userFound._id, email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
     } catch (err) {
-      logger.error(err)
+      logger.error(err.message)
       return done(err)
     }
   }))
@@ -96,7 +96,7 @@ const initializePassport = () => {
 
       return done(null, { _id: userFound._id, email: userFound.email, role: userFound.role.name, avatar: userFound.avatar })
     } catch (err) {
-      logger.error(err)
+      logger.error(err.message)
       return done(err)
     }
   }))
