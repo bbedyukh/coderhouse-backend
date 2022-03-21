@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { __dirname } from '../utils.js'
-import Product from '../dao/models/Product.js'
-import Category from '../dao/models/Category.js'
+import Product from '../models/Product.js'
+import Category from '../models/Category.js'
 
 export default class ProductService {
   async getProducts () {

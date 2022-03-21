@@ -14,7 +14,7 @@ import purchaseRouter from './routes/purchase.routes.js'
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import loggerHandler from './middlewares/loggerHandler.js'
 
-import { connectMongoDB } from './dao/db/connection.js'
+import { connectMongoDB } from './db/connection.js'
 import { PORT } from './config/config.js'
 import { __dirname } from './utils.js'
 import pkg from '../package.json'

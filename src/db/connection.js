@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import { MONGO } from '../../config/config.js'
+import { MONGO } from '../config/config.js'
 import initDatabase from './initDatabase.js'
-import loggerHandler from '../../middlewares/loggerHandler.js'
+import loggerHandler from '../middlewares/loggerHandler.js'
 
 const logger = loggerHandler()
 

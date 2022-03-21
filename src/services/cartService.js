@@ -1,6 +1,6 @@
-import Cart from '../dao/models/Cart.js'
-import Product from '../dao/models/Product.js'
-import User from '../dao/models/User.js'
+import Cart from '../models/Cart.js'
+import Product from '../models/Product.js'
+import User from '../models/User.js'
 
 export default class CartService {
   async getCart (cartId) {

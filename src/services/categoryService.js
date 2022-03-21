@@ -1,4 +1,4 @@
-import Category from '../dao/models/Category.js'
+import Category from '../models/Category.js'
 
 export default class CategoryService {
   async getCategories () {
