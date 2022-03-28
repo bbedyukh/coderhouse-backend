@@ -1,10 +1,14 @@
-import { Schema, model } from 'mongoose'
+import { Schema } from 'mongoose'
 
-const CartSchema = new Schema({
-  products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-  user: { type: Schema.Types.ObjectId, ref: 'User', unique: true }
-}, { timestamps: true, versionKey: false })
+export default class Cart {
+  static get model () {
+    return 'Cart'
+  }
 
-const Cart = model('Cart', CartSchema)
-
-export default Cart
+  static get schema () {
+    return {
+      products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
+      user: { type: Schema.Types.ObjectId, ref: 'User', unique: true }
+    }
+  }
+}

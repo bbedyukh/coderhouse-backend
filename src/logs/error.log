@@ -1,0 +1,43 @@
+{"level":"error","message":"Cannot read property 'id' of null","timestamp":"2022-03-21T21:51:33.836Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-03-21T22:17:19.275Z"}
+{"level":"error","message":"Cannot read property 'id' of null","timestamp":"2022-03-21T22:28:19.866Z"}
+{"level":"error","message":"E11000 duplicate key error collection: coderhouse-backend.users index: username_1 dup key: { username: \"dbedyukh\" }","timestamp":"2022-03-21T23:42:19.483Z"}
+{"level":"error","message":"Missing 'productId' parameter!","timestamp":"2022-03-22T16:01:02.205Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-03-22T17:30:33.509Z"}
+{"level":"error","message":"Cannot read property 'name' of null","timestamp":"2022-03-22T17:31:43.780Z"}
+{"level":"error","message":"Cannot read property 'name' of null","timestamp":"2022-03-22T17:31:58.586Z"}
+{"level":"error","message":"Cannot read property 'name' of null","timestamp":"2022-03-22T17:32:00.978Z"}
+{"level":"error","message":"Cannot read property 'name' of null","timestamp":"2022-03-22T17:32:51.923Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-03-22T17:34:19.262Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-03-22T17:36:41.479Z"}
+{"level":"error","message":"Product validation failed: picture: Path `picture` is required., stock: Path `stock` is required., price: Path `price` is required., code: Path `code` is required., category: Path `category` is required., description: Path `description` is required., name: Path `name` is required.","timestamp":"2022-03-22T17:36:58.875Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-03-22T17:38:08.157Z"}
+{"level":"error","message":"Cannot read property 'name' of null","timestamp":"2022-03-22T17:42:06.716Z"}
+{"level":"error","message":"Category not found.","timestamp":"2022-03-22T17:42:39.532Z"}
+{"level":"error","message":"body is not defined","timestamp":"2022-03-22T17:42:42.705Z"}
+{"level":"error","message":"Category not found.","timestamp":"2022-03-22T17:43:22.263Z"}
+{"level":"error","message":"roductService is not defined","timestamp":"2022-03-28T02:11:22.537Z"}
+{"level":"error","message":"Non-existent product.","timestamp":"2022-03-28T02:11:31.382Z"}
+{"level":"error","message":"_Product.default.findOne is not a function","timestamp":"2022-03-28T02:11:52.805Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-03-28T02:13:22.966Z"}
+{"level":"error","message":"_User.default.findOne is not a function","timestamp":"2022-03-28T02:23:07.162Z"}
+{"level":"error","message":"Cannot read property 'firstName' of null","timestamp":"2022-03-28T02:24:26.273Z"}
+{"level":"error","message":"_services.cartService.getOne(...).getOne is not a function","timestamp":"2022-03-28T02:54:46.487Z"}
+{"level":"error","message":"_services.cartService.get(...).populate is not a function","timestamp":"2022-03-28T02:57:41.703Z"}
+{"level":"error","message":"_services.cartService.findById is not a function","timestamp":"2022-03-28T03:00:13.235Z"}
+{"level":"error","message":"_services.cartService.getOne(...).getOne is not a function","timestamp":"2022-03-28T03:00:29.436Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:01:54.802Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:02:19.147Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:02:46.245Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:03:58.696Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:05:44.371Z"}
+{"level":"error","message":"id.toObject is not a function","timestamp":"2022-03-28T03:05:53.387Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-03-28T03:06:57.813Z"}
+{"level":"error","message":"Non-existent cart.","timestamp":"2022-03-28T03:07:45.630Z"}
+{"level":"error","message":"Non-existent cart.","timestamp":"2022-03-28T03:07:52.383Z"}
+{"level":"error","message":"Non-existent cart.","timestamp":"2022-03-28T03:07:55.959Z"}
+{"level":"error","message":"Non-existent cart.","timestamp":"2022-03-28T03:07:58.441Z"}
+{"level":"error","message":"Non-existent cart.","timestamp":"2022-03-28T15:32:07.346Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-03-28T15:33:51.284Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-03-28T15:35:35.872Z"}
+{"level":"error","message":"Cart already exists for this user.","timestamp":"2022-03-28T15:36:07.806Z"}

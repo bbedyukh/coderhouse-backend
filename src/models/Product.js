@@ -1,15 +1,17 @@
-import { Schema, model } from 'mongoose'
+export default class Product {
+  static get model () {
+    return 'Product'
+  }
 
-const ProductSchema = new Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  category: { type: Schema.Types.ObjectId, ref: 'Category', required: true },
-  code: { type: String, required: true, unique: true },
-  price: { type: Number, required: true },
-  stock: { type: Number, required: true },
-  picture: { type: String, required: true }
-}, { timestamps: true, versionKey: false })
-
-const Product = model('Product', ProductSchema)
-
-export default Product
+  static get schema () {
+    return {
+      name: { type: String, required: true },
+      description: { type: String, required: true },
+      category: { type: String, required: true },
+      code: { type: String, required: true, unique: true },
+      price: { type: Number, required: true },
+      stock: { type: Number, required: true },
+      picture: { type: String, required: true }
+    }
+  }
+}
