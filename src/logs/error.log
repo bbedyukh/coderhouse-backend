@@ -41,3 +41,57 @@
 {"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-03-28T15:33:51.284Z"}
 {"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-03-28T15:35:35.872Z"}
 {"level":"error","message":"Cart already exists for this user.","timestamp":"2022-03-28T15:36:07.806Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:06:58.754Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:07:58.344Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:07:58.379Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:06.835Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:06.864Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:09.312Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:12.271Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:22.853Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:08:37.089Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:09:05.143Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:09:06.867Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:09:15.730Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:09:17.644Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:09:48.102Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:10:05.868Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:10:45.285Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:11:00.206Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:11:05.429Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:11:20.995Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:11:30.010Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:12:11.147Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:12:15.256Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:12:26.550Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:12:55.033Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:13:12.051Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:13:26.109Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:13:41.013Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:14:45.455Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:14:45.495Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:14:53.385Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:14:53.420Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:15:43.078Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:15:54.245Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:16:03.442Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:16:08.840Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:19:39.731Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:20:07.539Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:20:07.574Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:20:27.190Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:20:37.079Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:22:16.868Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:23:26.380Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:25:25.123Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:26:52.087Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:27:00.816Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-01T00:27:27.421Z"}
+                                                                                                                                            {"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-04-04T22:59:17.083Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-04-04T23:25:44.771Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-04-04T23:26:54.791Z"}
+{"level":"error","message":"Cannot read property '_id' of null","timestamp":"2022-04-04T23:27:04.708Z"}
+{"level":"error","message":"Cart already exists for this user.","timestamp":"2022-04-04T23:39:33.995Z"}
+{"level":"error","message":"Cart already exists for this user.","timestamp":"2022-04-04T23:44:52.451Z"}
+{"level":"error","message":"Cart already exists for this user.","timestamp":"2022-04-04T23:52:16.057Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-04-05T00:50:48.780Z"}

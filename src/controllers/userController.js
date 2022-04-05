@@ -5,9 +5,9 @@ const logger = loggerHandler()
 
 export const createUser = async (req, res) => {
   try {
-    const { firstName, lastName, email, password, username, phone, address, age } = req.body
+    let { firstName, lastName, email, password, username, phone, address, age, avatar } = req.body
     const file = req.file
-    const avatar = file ? `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}` : null
+    avatar = file ? `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}` : avatar
 
     const userFound = await userService.getOne({ email })
     if (userFound) throw new Error('User already exists.')
@@ -63,10 +63,10 @@ export const fetchUser = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const { userId } = req.params
-    const { firstName, lastName, email, password, username, phone, address, age, role } = req.body
+    let { firstName, lastName, email, password, username, phone, address, age, role, avatar } = req.body
+
     const file = req.file
-    let avatar
-    avatar = file ? avatar = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}` : null
+    avatar = file ? avatar = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}` : avatar
 
     const userNotFound = await userService.getOne({ _id: userId })
     if (!userNotFound) throw new Error('Non-existent user.')

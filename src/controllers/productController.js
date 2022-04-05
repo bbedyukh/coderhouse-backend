@@ -7,8 +7,8 @@ const logger = loggerHandler()
 export const createProduct = async (req, res) => {
   try {
     const { file } = req
-    const { name, category, description, code, price, stock } = req.body
-    const picture = file ? `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}` : null
+    let { name, category, description, code, price, stock, picture } = req.body
+    picture = file ? `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}` : picture
 
     const productFound = await productService.getOne({ name })
     if (productFound) throw new Error('Product already exists.')
@@ -62,8 +62,8 @@ export const updateProduct = async (req, res) => {
   try {
     const { productId } = req.params
     const { file } = req
-    const { name, category, description, code, price, stock } = req.body
-    const picture = file ? `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}` : null
+    let { name, category, description, code, price, stock, picture } = req.body
+    picture = file ? `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}` : picture
 
     const productNotFound = await productService.getOne({ _id: productId })
     if (!productNotFound) throw new Error('Non-existent product.')

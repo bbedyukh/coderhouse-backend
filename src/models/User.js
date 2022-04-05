@@ -1,4 +1,3 @@
-import { Schema } from 'mongoose'
 
 export default class User {
   static get model () {

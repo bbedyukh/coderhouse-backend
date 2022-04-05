@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from 'cors'
 
+import swaggerUiExpress from 'swagger-ui-express'
+import swaggerJsdoc from 'swagger-jsdoc'
+
 import productRouter from './routes/product.routes.js'
 import cartRouter from './routes/cart.routes.js'
 import userRouter from './routes/user.routes.js'
@@ -8,9 +11,9 @@ import userRouter from './routes/user.routes.js'
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import loggerHandler from './middlewares/loggerHandler.js'
 
-import { PORT } from './config/config.js'
+import { PORT, SWAGGER } from './config/config.js'
 import { __dirname } from './utils.js'
-import pkg from '../package.json'
+// import pkg from '../package.json'
 
 const logger = loggerHandler()
 
@@ -21,6 +24,7 @@ export default class Server {
   }
 
   middlewares () {
+    this.app.use('/api/swagger-ui', swaggerUiExpress.serve, swaggerUiExpress.setup(swaggerJsdoc(SWAGGER.spec)))
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cors())
@@ -30,12 +34,12 @@ export default class Server {
 
   routes () {
     this.app.get('/api', (req, res) => {
-      res.json({
-        name: pkg.name,
-        description: pkg.description,
-        version: pkg.version,
-        author: pkg.author
-      })
+      // res.json({
+      //   name: pkg.name,
+      //   description: pkg.description,
+      //   version: pkg.version,
+      //   author: pkg.author
+      // })
     })
     this.app.use('/api/products', productRouter)
     this.app.use('/api/carts', cartRouter)

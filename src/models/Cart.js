@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose'
+import mongoose from 'mongoose'
 
 export default class Cart {
   static get model () {
@@ -7,8 +7,8 @@ export default class Cart {
 
   static get schema () {
     return {
-      products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-      user: { type: Schema.Types.ObjectId, ref: 'User', unique: true }
+      products: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Product' }],
+      user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', unique: true }
     }
   }
 }
