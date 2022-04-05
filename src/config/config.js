@@ -4,7 +4,6 @@ config()
 
 export const PORT = process.env.PORT || 3000
 export const PERSISTENCE = process.env.PERSISTENCE
-export const ENVIRONMENT = process.env.ENVIRONMENT
 
 export const SWAGGER = {
   spec: {
@@ -27,6 +26,5 @@ export const SWAGGER = {
 }
 
 export const MONGO = {
-  URI_DEVELOPMENT: process.env.MONGO_URI_DEVELOPMENT || '',
-  URI_TESTER: process.env.MONGO_URI_TESTER || ''
+  URI: process.env.MONGO_URI || ''
 }
