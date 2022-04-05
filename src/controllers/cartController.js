@@ -15,7 +15,7 @@ export const createCart = async (req, res) => {
 
     const cart = await cartService.createCart(userId)
     const cartDTO = new CartDTO(cart)
-    res.json({ cart: cartDTO })
+    res.json(cartDTO)
   } catch (err) {
     logger.error(err.message)
     res.status(400).json({ message: err.message })
@@ -26,7 +26,7 @@ export const fetchCarts = async (req, res) => {
   try {
     const carts = await cartService.get()
     const cartDTOs = carts.map(cart => new CartDTO(cart))
-    res.json({ carts: cartDTOs })
+    res.json(cartDTOs)
   } catch (err) {
     logger.error(err.message)
     res.status(400).json({ message: err.message })
@@ -41,7 +41,7 @@ export const fetchCart = async (req, res) => {
     if (!cart) throw new Error('Non-existent cart.')
 
     const cartDTO = new CartDTO(cart)
-    res.json({ cart: cartDTO })
+    res.json(cartDTO)
   } catch (err) {
     logger.error(err.message)
     res.status(400).json({ message: err.message })
@@ -74,7 +74,7 @@ export const fetchProducts = async (req, res) => {
     if (!cart) throw new Error('Non-existent cart.')
 
     const products = cart.products
-    res.json({ products })
+    res.json(products)
   } catch (err) {
     logger.error(err.message)
     res.status(400).json({ message: err.message })
@@ -87,7 +87,6 @@ export const deleteProduct = async (req, res) => {
     const cart = await cartService.getOne({ _id: cartId })
     if (!cart) throw new Error('Non-existent cart.')
 
-    console.log(cart)
     const product = cart.products.find(id => id.toString() === productId)
     if (!product) throw new Error('Non-existent product in cart.')
 

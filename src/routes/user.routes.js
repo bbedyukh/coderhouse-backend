@@ -16,17 +16,37 @@ const userRouter = Router()
  *          type: string
  *        email:
  *          type: string
+ *        password:
+ *          type: string
+ *        username:
+ *          type: string
+ *        phone:
+ *          type: string
+ *        address:
+ *          type: string
+ *        age:
+ *          type: number
+ *        avatar:
+ *          type: string
+ *        role:
+ *          type: string
  *      example:
  *        firstName: Bogdan
  *        lastName: Bedyukh
  *        email: bedyukhedits@gmail.com
+ *        password: "12345678"
+ *        username: bbedyukh
+ *        phone: "+5491122334455"
+ *        address: Avenida Rivadavia 1234
+ *        age: 25
+ *        avatar: https://i.imgur.com/j9XyQ8l.jpg
  */
 
 /**
  * @swagger
  * /api/users:
  *  post:
- *    summary: Create a new user
+ *    summary: Create a new user.
  *    tags: [User]
  *    requestBody:
  *      required: true
@@ -46,7 +66,7 @@ userRouter.post('/', uploadService.single('avatar'), createUser)
  * @swagger
  * /api/users:
  *  get:
- *    summary: Get all users
+ *    summary: Get all users.
  *    tags: [User]
  *    responses:
  *      200:
@@ -60,6 +80,28 @@ userRouter.post('/', uploadService.single('avatar'), createUser)
  */
 userRouter.get('/', fetchUsers)
 
+/**
+ * @swagger
+ * /api/users/{userId}:
+ *  get:
+ *    summary: Get a user.
+ *    tags: [User]
+ *    parameters:
+ *      - in: path
+ *        name: userId
+ *        schema:
+ *          type: string
+ *          required: true
+ *          description: ObjectId of user to get
+ *    responses:
+ *      200:
+ *        description: A user
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              $ref: '#/components/schemas/User'
+ */
 userRouter.get('/:userId', fetchUser)
 
 userRouter.put('/:userId', uploadService.single('avatar'), updateUser)

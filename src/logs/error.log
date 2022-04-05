@@ -95,3 +95,22 @@
 {"level":"error","message":"Cart already exists for this user.","timestamp":"2022-04-04T23:44:52.451Z"}
 {"level":"error","message":"Cart already exists for this user.","timestamp":"2022-04-04T23:52:16.057Z"}
 {"level":"error","message":"Non-existent product in cart.","timestamp":"2022-04-05T00:50:48.780Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \":userId\" (type string) at path \"_id\" for model \"User\"","timestamp":"2022-04-05T13:30:07.688Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T13:35:51.750Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T13:37:16.911Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T13:37:20.358Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2022-04-05T13:37:20.531Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T13:39:22.270Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T13:39:23.344Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T14:09:37.245Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2022-04-05T14:09:38.400Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-04-05T14:09:38.964Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"User\"","timestamp":"2022-04-05T14:09:38.972Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T14:13:58.710Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2022-04-05T14:13:58.724Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T14:14:51.702Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"User\"","timestamp":"2022-04-05T14:14:52.861Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-04-05T14:23:59.235Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Product\"","timestamp":"2022-04-05T14:24:00.378Z"}
+{"level":"error","message":"Non-existent product in cart.","timestamp":"2022-04-05T14:24:00.557Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"User\"","timestamp":"2022-04-05T14:24:00.565Z"}
