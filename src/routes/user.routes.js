@@ -40,6 +40,7 @@ const userRouter = Router()
  *        address: Avenida Rivadavia 1234
  *        age: 25
  *        avatar: https://i.imgur.com/j9XyQ8l.jpg
+ *        role: user
  */
 
 /**
@@ -57,7 +58,12 @@ const userRouter = Router()
  *            $ref: '#/components/schemas/User'
  *    responses:
  *      200:
- *        description: New user created
+ *        description: Returns a new user created.
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              $ref: '#/components/schemas/User'
  */
 
 userRouter.post('/', uploadService.single('avatar'), createUser)
@@ -70,7 +76,7 @@ userRouter.post('/', uploadService.single('avatar'), createUser)
  *    tags: [User]
  *    responses:
  *      200:
- *        description: All users
+ *        description: Returns all users created.
  *        content:
  *          application/json:
  *            schema:
@@ -78,6 +84,7 @@ userRouter.post('/', uploadService.single('avatar'), createUser)
  *              items:
  *                $ref: '#/components/schemas/User'
  */
+
 userRouter.get('/', fetchUsers)
 
 /**
@@ -95,16 +102,65 @@ userRouter.get('/', fetchUsers)
  *          description: ObjectId of user to get
  *    responses:
  *      200:
- *        description: A user
+ *        description: Returns a specific user.
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/User'
  */
+
 userRouter.get('/:userId', fetchUser)
 
+/**
+ * @swagger
+ * /api/users/{userId}:
+ *  put:
+ *    summary: Update a user.
+ *    tags: [User]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            $ref: '#/components/schemas/User'
+ *    parameters:
+ *      - in: path
+ *        name: userId
+ *        schema:
+ *          type: string
+ *          required: true
+ *          description: ObjectId of user to update.
+ *    responses:
+ *      200:
+ *        description: Returns a user updated.
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              $ref: '#/components/schemas/User'
+ */
+
 userRouter.put('/:userId', uploadService.single('avatar'), updateUser)
+
+/**
+ * @swagger
+ * /api/users/{userId}:
+ *  delete:
+ *    summary: Delete a user.
+ *    tags: [User]
+ *    parameters:
+ *      - in: path
+ *        name: userId
+ *        schema:
+ *          type: string
+ *          required: true
+ *          description: ObjectId of user to delete
+ *    responses:
+ *      204:
+ *        description: User has been deleted.
+ */
 
 userRouter.delete('/:userId', deleteUser)
 
