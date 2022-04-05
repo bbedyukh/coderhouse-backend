@@ -146,7 +146,7 @@ productRouter.put('/:productId', uploadService.single('picture'), updateProduct)
  *          description: ObjectId of product to delete.
  *    responses:
  *      204:
- *        description: Product has been deleted.
+ *        description: Product has been deleted succesfully.
  */
 
 productRouter.delete('/:productId', deleteProduct)

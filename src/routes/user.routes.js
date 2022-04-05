@@ -159,7 +159,7 @@ userRouter.put('/:userId', uploadService.single('avatar'), updateUser)
  *          description: ObjectId of user to delete
  *    responses:
  *      204:
- *        description: User has been deleted.
+ *        description: User has been deleted succesfully.
  */
 
 userRouter.delete('/:userId', deleteUser)
