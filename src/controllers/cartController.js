@@ -5,15 +5,15 @@ const logger = loggerHandler()
 
 export const createCart = async (req, res) => {
   try {
-    const { userId } = req.body
+    const { user } = req.body
 
-    const userFound = await userService.getOne({ _id: userId })
+    const userFound = await userService.getOne({ _id: user })
     if (!userFound) throw new Error('Non-existent user.')
 
-    const cartFound = await cartService.getOne({ user: userId })
+    const cartFound = await cartService.getOne({ user })
     if (cartFound) throw new Error('Cart already exists for this user.')
 
-    const cart = await cartService.createCart(userId)
+    const cart = await cartService.createCart(user)
     const cartDTO = new CartDTO(cart)
     res.json(cartDTO)
   } catch (err) {

@@ -114,8 +114,8 @@ describe('PRODUCTS', () => {
 describe('CARTS', () => {
   it('CREATE (POST) - OK', async () => {
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     await request.delete(`/users/${userCreated.body.id}`)
     await request.delete(`/carts/${cartCreated.body.id}`)
@@ -125,8 +125,8 @@ describe('CARTS', () => {
 
   it('READ (GET ALL) - OK', async () => {
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     const cartsFound = await request.get('/carts')
 
@@ -138,8 +138,8 @@ describe('CARTS', () => {
 
   it('READ (GET ONE) - OK', async () => {
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     const cartFound = await request.get(`/carts/${cartCreated.body.id}`)
 
@@ -153,8 +153,8 @@ describe('CARTS', () => {
     const productCreated = await request.post('/products').send(productBody)
 
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     const productsCartAdded = await request.post(`/carts/${cartCreated.body.id}/products/${productCreated.body.id}`)
 
@@ -169,8 +169,8 @@ describe('CARTS', () => {
     const productCreated = await request.post('/products').send(productBody)
 
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     const productsCartFound = await request.get(`/carts/${cartCreated.body.id}/products`)
 
@@ -185,8 +185,8 @@ describe('CARTS', () => {
     const productCreated = await request.post('/products').send(productBody)
 
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     await request.post(`/carts/${cartCreated.body.id}/products/${productCreated.body.id}`)
 
@@ -201,8 +201,8 @@ describe('CARTS', () => {
 
   it('DELETE CART (DELETE) - OK', async () => {
     const userCreated = await request.post('/users').send(userBody)
-    const body = { userId: userCreated.body.id }
-    const cartCreated = await request.post('/carts').send(body)
+    const cartBody = { user: userCreated.body.id }
+    const cartCreated = await request.post('/carts').send(cartBody)
 
     const cartDeleted = await request.delete(`/carts/${cartCreated.body.id}`)
     await request.delete(`/users/${userCreated.body.id}`)
