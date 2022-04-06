@@ -1,0 +1,18 @@
+// GET CLIENTS
+
+{
+    clients {
+        id
+    }
+}
+
+
+// CREATE CLIENT
+
+mutation {
+    createClient(name: "Bogdan", phone: "5491167609138") {
+        id,
+        name,
+        phone
+    }
+}
