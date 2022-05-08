@@ -53,7 +53,7 @@ const initializePassport = () => {
       const matchPassword = await User.comparePassword(password, user.password)
       if (!matchPassword) return done(null, false, { message: 'Username or password invalid.' })
 
-      return done(null, { _id: user._id, role: user.role, cart: user.cart })
+      return done(null, JSON.parse(JSON.stringify(user)))
     } catch (err) {
       logger.error(err.message)
       return done(err)
@@ -65,7 +65,7 @@ const initializePassport = () => {
       const user = await User.findById({ _id: jwtPayload._id })
       if (!user) return done(null, false, { message: 'User not found.' })
 
-      return done(null, { _id: user._id, role: user.role, cart: user.cart })
+      return done(null, JSON.parse(JSON.stringify(user)))
     } catch (err) {
       logger.error(err.message)
       return done(err)

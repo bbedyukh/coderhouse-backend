@@ -1,4 +1,4 @@
-import Server from './server.js'
-const server = new Server()
+import Servidor from './server.js'
+const server = new Servidor()
 
 server.run()

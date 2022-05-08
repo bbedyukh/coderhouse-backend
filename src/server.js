@@ -3,6 +3,7 @@ import cors from 'cors'
 import passport from 'passport'
 import initializePassport from './config/passport-config.js'
 import cookieParser from 'cookie-parser'
+import { Server } from 'socket.io'
 
 import productRouter from './routes/product.routes.js'
 import cartRouter from './routes/cart.routes.js'
@@ -17,10 +18,12 @@ import { connectMongoDB } from './db/connection.js'
 import { PORT } from './config/config.js'
 import { __dirname } from './utils.js'
 import pkg from '../package.json'
+import MessageService from './services/messageService.js'
 
 const logger = loggerHandler()
+const messageService = new MessageService()
 
-export default class Server {
+export default class Servidor {
   constructor () {
     this.app = express()
     this.port = PORT
@@ -71,5 +74,58 @@ export default class Server {
       logger.info(`Server listen on port ${PORT}`)
     })
     server.on('error', err => logger.error(`Error server: ${err}`))
+
+    const io = new Server(server, {
+      cors: {
+        origin: 'http://localhost:3001',
+        methods: ['GET', 'POST']
+      }
+    })
+
+    const connectedSockets = {}
+    io.on('connection', async socket => {
+      console.log('client connected')
+      if (socket.handshake.query.name) {
+        // Check if there's an associated id with socketId
+        if (Object.values(connectedSockets).some(user => user.id === socket.handshake.query.id)) {
+          // replace socket id for current connected socket
+          Object.keys(connectedSockets).forEach(idSocket => {
+            if (connectedSockets[idSocket].id === socket.handshake.query.id) {
+              delete connectedSockets[idSocket]
+              connectedSockets[socket.id] = {
+                name: socket.handshake.query.name,
+                id: socket.handshake.query.id,
+                thumbnail: socket.handshake.query.thumbnail
+              }
+            }
+          })
+        } else {
+          connectedSockets[socket.id] = {
+            name: socket.handshake.query.name,
+            id: socket.handshake.query.id,
+            thumbnail: socket.handshake.query.thumbnail
+          }
+        }
+      }
+      io.emit('users', connectedSockets)
+      const logs = await messageService.getMessages()
+      io.emit('logs', logs)
+      // Other listeners
+      socket.on('disconnect', reason => {
+        delete connectedSockets[socket.id]
+      })
+      socket.on('message', async data => {
+        if (Object.keys(connectedSockets).includes(socket.id)) {
+          console.log('DATA', data)
+          console.log('connectedSockets', connectedSockets)
+          await messageService.save({
+            author: connectedSockets[socket.id].id,
+            content: data
+          })
+          const logs = await messageService.getMessages()
+          io.emit('logs', logs)
+        }
+      })
+    })
   }
 }

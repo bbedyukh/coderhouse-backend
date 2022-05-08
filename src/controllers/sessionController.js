@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken'
 
 export const current = (req, res) => {
   const { user } = req
-  res.send({ status: 'success', payload: { id: user._id, role: user.role, cart: user.cart } })
+  res.send({ status: 'success', payload: user })
 }
 
 export const register = (req, res) => {
