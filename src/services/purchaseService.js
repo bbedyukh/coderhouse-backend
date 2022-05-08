@@ -2,12 +2,8 @@ import Purchase from '../models/Purchase.js'
 import Product from '../models/Product.js'
 import User from '../models/User.js'
 import CartService from './cartService.js'
-import MailService from './mailService.js'
-import TwilioService from './twilioService.js'
 
 const cartService = new CartService()
-const mailService = new MailService()
-const whatsappService = new TwilioService()
 
 export default class PurchaseService {
   async getPurchases () {
@@ -39,25 +35,6 @@ export default class PurchaseService {
 
     if (purchase) {
       cartService.deleteCart(user.cart)
-
-      const mailBody = `
-        <h1>Your order #${purchase._id}</h1>
-
-        <ol>
-          ${purchase.products.map(product =>
-        `<li><a href="${product.picture}">${product.name}</a> - $${product.price}</li>`
-      )}
-        </ol>
-      `
-      mailService.sendMail(`New order by ${user.firstName} ${user.lastName} - ${user.email}`, mailBody)
-
-      const messageBody = `
-        Your order *#${purchase._id}*
-        ${(purchase.products.map((product, index) => `\n${index + 1}. ${product.name} - $${product.price}`)).join('\n')}
-      `
-
-      whatsappService.sendWhatsAppMessage(messageBody)
-      whatsappService.sendSMSMessage(`Your order #${purchase._id} has been received and is in progress.`, user.phone)
     }
 
     return purchase

@@ -2,28 +2,33 @@ import { JWT } from '../config/config.js'
 import jwt from 'jsonwebtoken'
 
 export const current = (req, res) => {
-  const user = req.user
-  res.json(user)
+  const { user } = req
+  res.send({ status: 'success', payload: { id: user._id, role: user.role, cart: user.cart } })
 }
 
-export const signup = (req, res) => {
-  res.json({ message: 'Signed up' })
+export const register = (req, res) => {
+  res.send({ status: 'success', message: 'Signed up' })
 }
 
-export const signin = (req, res) => {
-  const user = req.user
+export const login = (req, res) => {
+  const { user } = req
 
   const token = jwt.sign(user, JWT.SECRET)
 
-  res.cookie('JWT_COOKIE', token, {
+  res.cookie(JWT.COOKIE, token, {
     httpOnly: true,
-    maxAge: 1000 * 60 * 60
+    maxAge: 60 * 60 * 1000
   })
 
-  res.json({ message: 'Logged in' })
+  res.cookie('sessionCookie', 'boom', {
+    maxAge: 60 * 60 * 1000
+  })
+
+  res.send({ status: 'success', payload: { user } })
 }
 
 export const logout = (req, res) => {
-  res.clearCookie('JWT_COOKIE')
+  res.clearCookie(JWT.COOKIE)
+  res.clearCookie('sessionCookie')
   res.json({ message: 'Logged out' })
 }

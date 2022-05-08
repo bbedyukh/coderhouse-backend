@@ -8,7 +8,6 @@ import productRouter from './routes/product.routes.js'
 import cartRouter from './routes/cart.routes.js'
 import sessionRouter from './routes/session.routes.js'
 import userRouter from './routes/user.routes.js'
-import categoryRouter from './routes/category.routes.js'
 import purchaseRouter from './routes/purchase.routes.js'
 
 import notFoundHandler from './middlewares/notFoundHandler.js'
@@ -28,12 +27,11 @@ export default class Server {
   }
 
   middlewares () {
+    this.app.use(cors({ credentials: true, origin: 'http://localhost:3001' }))
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cookieParser())
-    this.app.use(cors())
     this.app.use('/uploads/', express.static(__dirname + '/uploads'))
-    this.app.use(express.static(__dirname + '/public'))
     this.app.use(passport.initialize())
     initializePassport()
   }
@@ -49,7 +47,6 @@ export default class Server {
     })
     this.app.use('/api', sessionRouter)
     this.app.use('/api/purchases', purchaseRouter)
-    this.app.use('/api/categories', categoryRouter)
     this.app.use('/api/products', productRouter)
     this.app.use('/api/carts', cartRouter)
     this.app.use('/api/users', userRouter)

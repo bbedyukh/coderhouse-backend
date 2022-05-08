@@ -6,14 +6,14 @@ const logger = loggerHandler()
 
 export const createProduct = async (req, res) => {
   const { file } = req
-  const { name, category, description, code, price, stock } = req.body
-  let picture = ''
+  const { title, description, code, price, stock } = req.body
+  let thumbnail = ''
   if (file) {
-    picture = `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}`
+    thumbnail = `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}`
   }
-  service.createProduct(name, category, description, code, picture, price, stock)
+  service.createProduct(title, description, code, thumbnail, price, stock)
     .then(product => {
-      res.json({ product })
+      res.json({ status: 'success', payload: product })
     })
     .catch(err => {
       logger.error(err.message)
@@ -24,7 +24,7 @@ export const createProduct = async (req, res) => {
 export const getProducts = async (req, res) => {
   service.getProducts()
     .then(products => {
-      res.json({ products })
+      res.json({ status: 'success', payload: products })
     })
     .catch(err => {
       logger.error(err.message)
@@ -36,7 +36,7 @@ export const getProduct = async (req, res) => {
   const productId = req.params.id
   service.getProductById(productId)
     .then(product => {
-      res.json({ product })
+      res.json({ status: 'success', payload: product })
     })
     .catch(err => {
       logger.error(err.message)
@@ -49,11 +49,11 @@ export const updateProduct = async (req, res) => {
   const file = req.file
   const product = req.body
   if (file) {
-    product.picture = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
+    product.thumbnail = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
   }
   service.updateProductById(productId, product)
     .then(product => {
-      res.json({ product })
+      res.json({ status: 'success', payload: product })
     })
     .catch(err => {
       logger.error(err.message)

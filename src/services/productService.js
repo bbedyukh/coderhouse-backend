@@ -1,7 +1,6 @@
 import fs from 'fs'
 import { __dirname } from '../utils.js'
 import Product from '../models/Product.js'
-import Category from '../models/Category.js'
 
 export default class ProductService {
   async getProducts () {
@@ -17,19 +16,16 @@ export default class ProductService {
     return product
   }
 
-  async createProduct (name, category, description, code, picture, price, stock) {
-    if (!name || !category || !description || !code || !picture || !price || !stock) throw new Error('Body product is badly formed.')
+  async createProduct (title, description, code, thumbnail, price, stock) {
+    if (!title || !description || !code || !thumbnail || !price || !stock) throw new Error('Body product is badly formed.')
 
-    const categoryFound = await Category.findOne({ name: { $eq: category } })
-    if (!categoryFound) throw new Error('Category not found.')
-
-    const product = await Product.findOne({ name: { $eq: name } })
+    const product = await Product.findOne({ title: { $eq: title } })
     if (product) throw new Error('Product already exists.')
 
     stock = parseInt(stock)
     price = parseInt(price)
 
-    const createdProduct = await Product.create({ name, category, description, code, picture, price, stock })
+    const createdProduct = await Product.create({ title, description, code, thumbnail, price, stock })
     return createdProduct
   }
 
@@ -39,7 +35,7 @@ export default class ProductService {
     const product = await Product.findById(productId)
     if (!product) throw new Error('Non-existent product.')
 
-    const productFound = await Product.findOne({ _id: { $ne: productId }, name: { $eq: body.name } })
+    const productFound = await Product.findOne({ _id: { $ne: productId }, title: { $eq: body.title } })
     if (productFound) throw new Error('Product already exists.')
 
     body.stock = parseInt(body.stock)
@@ -62,11 +58,11 @@ export default class ProductService {
   async deleteFileFromServer (product) {
     try {
       if (!product) throw new Error('Missing \'product\' parameter')
-      const picture = product.picture
-      const index = picture.lastIndexOf('/') + 1
-      const pictureName = picture.substring(index, picture.length)
-      await fs.promises.unlink(__dirname + '/uploads/' + pictureName)
-      console.log(`Picture ${pictureName} has been deleted successfully from server.`)
+      const thumbnail = product.thumbnail
+      const index = thumbnail.lastIndexOf('/') + 1
+      const thumbnailName = thumbnail.substring(index, thumbnail.length)
+      await fs.promises.unlink(__dirname + '/uploads/' + thumbnailName)
+      console.log(`Thumbnail ${thumbnailName} has been deleted successfully from server.`)
     } catch (err) {
       console.error(err)
     }

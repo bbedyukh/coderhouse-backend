@@ -1,2 +1,313 @@
 {"level":"info","message":"Server listen on port 3000","timestamp":"2022-03-21T16:57:40.004Z"}
 {"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-03-21T16:57:41.618Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T22:55:03.450Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:08:09.410Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:09:23.588Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:09:26.082Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-05T23:09:30.434Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-05T23:09:31.361Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-05T23:09:31.841Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-05T23:09:32.394Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:13:13.433Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:13:15.847Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:14:34.700Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:14:37.356Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:18:24.572Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:18:27.164Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:18:58.854Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:19:00.535Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:20:08.363Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:20:10.620Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:20:19.407Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:20:21.285Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:34:54.477Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:34:56.546Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:38:34.463Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:38:37.791Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:39:31.655Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:39:33.541Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:40:44.252Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:40:46.372Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:40:56.070Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:40:59.421Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:41:16.806Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:41:18.543Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:44:16.263Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:44:22.488Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:44:24.944Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:44:40.717Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:44:42.679Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:45:10.635Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:45:13.019Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:45:44.899Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:45:48.122Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:47:14.932Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:47:17.495Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:47:34.621Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:47:36.487Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:47:48.464Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:47:50.332Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:48:42.915Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:48:45.492Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:50:02.472Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:50:04.881Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:50:20.394Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:50:22.250Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:50:28.175Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:50:29.881Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:51:12.972Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:51:15.757Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:51:44.571Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:51:46.367Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:52:20.036Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:52:22.271Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:52:38.620Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:52:41.915Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:53:58.997Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:54:05.317Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:54:07.505Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:55:41.435Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:55:43.313Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:56:10.052Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:56:12.609Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-05T23:59:23.329Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-05T23:59:25.811Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-06T13:23:40.799Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:23:43.112Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T13:23:48.033Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T13:23:49.006Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T13:23:49.665Z"}
+{"level":"info","message":"Server listen on port 3001","timestamp":"2022-05-06T13:26:02.522Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:26:05.010Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:26:05.020Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:26:14.081Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:31:04.584Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:31:06.858Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:31:52.977Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:31:54.770Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:32:22.200Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:32:24.553Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:33:17.338Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:33:19.491Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T13:33:23.545Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:35:25.271Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:35:27.798Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:35:40.639Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:35:42.877Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:35:57.077Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:35:59.181Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:36:18.164Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:36:20.161Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:38:24.559Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:38:26.881Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:39:26.235Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:39:28.897Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T13:39:33.134Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T13:39:33.834Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T13:39:34.200Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T13:39:35.069Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:48:57.537Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:49:00.387Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:49:11.971Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:49:14.135Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:51:11.873Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:51:14.755Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:55:49.887Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:55:52.432Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:56:19.511Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:56:21.847Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:57:51.034Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:57:53.565Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:58:10.776Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:58:12.836Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T13:59:11.821Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T13:59:14.269Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:00:56.668Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:00:58.680Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:01:40.688Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:01:46.494Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:01:48.511Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:02:36.827Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:02:39.396Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:04:38.691Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:04:44.883Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:04:46.950Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:05:03.958Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:05:06.267Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:05:40.732Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:05:42.857Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:05:47.926Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:05:48.963Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:05:49.459Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:05:50.363Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:06:49.217Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:06:51.556Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:06:55.457Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:06:56.173Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:06:56.536Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:06:57.205Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:07:04.718Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:07:06.621Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:13:39.114Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:13:43.992Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:13:46.184Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:14:22.059Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:14:24.017Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:14:28.385Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:14:29.248Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:14:29.771Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:14:30.484Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:15:37.908Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:15:40.140Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:15:44.465Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:15:55.979Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:15:58.188Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:16:02.524Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:16:03.391Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:16:03.768Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:16:51.399Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:16:53.683Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:16:57.723Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:16:58.532Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:16:58.944Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:16:59.668Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:20:43.193Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:20:45.612Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:20:50.235Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:20:52.194Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:22:59.657Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:23:01.805Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T14:26:18.123Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T14:26:20.264Z"}
+{"level":"info","message":"Categories has been initialized successfuly.","timestamp":"2022-05-06T14:26:24.580Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T14:26:25.644Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T14:26:26.042Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T14:26:26.977Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T15:56:41.968Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T15:56:43.996Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T15:57:18.446Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T15:57:20.629Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T15:57:27.811Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T15:57:32.723Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T15:57:38.126Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T15:57:40.052Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:26:49.721Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:26:52.413Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:41:42.083Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:41:44.846Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:42:09.347Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:42:11.315Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T16:42:14.563Z"}
+{"level":"info","message":"Roles has been initialized successfuly.","timestamp":"2022-05-06T16:42:15.054Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T16:42:15.790Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:49:07.414Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:49:09.649Z"}
+{"level":"info","message":"Products has been initialized successfuly.","timestamp":"2022-05-06T16:49:13.820Z"}
+{"level":"info","message":"Users has been initialized successfuly.","timestamp":"2022-05-06T16:49:14.339Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:51:49.591Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:51:52.062Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:53:24.109Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:53:26.564Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:53:26.564Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:54:45.373Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:55:10.903Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:55:18.980Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:55:31.292Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:55:51.943Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:56:52.190Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:56:54.750Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:58:19.338Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:58:21.733Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T16:58:58.166Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T16:59:00.347Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:00:24.108Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:00:26.313Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:00:42.284Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:00:44.269Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:02:36.709Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:02:38.768Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:03:04.697Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:03:06.738Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:05:00.263Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:05:02.765Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:05:26.301Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:05:28.216Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:06:00.855Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:06:03.199Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:06:32.991Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:06:34.844Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:06:41.297Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:06:43.395Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:12:25.103Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:12:27.551Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:12:44.736Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:12:46.760Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:13:35.069Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:13:37.626Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:15:38.246Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:15:40.624Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:15:50.047Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:15:51.706Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:16:07.180Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:16:09.284Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:16:29.350Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:16:31.433Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:16:56.219Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:16:58.576Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:17:24.500Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:17:26.525Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:17:55.654Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:18:00.778Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:18:02.894Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:19:41.247Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:19:43.457Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:19:57.108Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:19:59.300Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:20:08.344Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:20:10.176Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:21:13.622Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:21:15.678Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:21:35.888Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:21:38.008Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:22:13.175Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:22:18.286Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:22:20.531Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:23:09.151Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:23:11.066Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:23:50.941Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:23:53.354Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:24:13.388Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:24:15.642Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:24:57.981Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:25:00.260Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:25:15.436Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:25:17.504Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:32:28.837Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:32:35.372Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-06T17:32:41.051Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-06T17:32:42.979Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T19:06:54.723Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T19:06:57.025Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:21:47.145Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:22:35.669Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:22:42.669Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:35:37.781Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:35:39.806Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:36:05.719Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:36:07.875Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:36:37.847Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:36:40.118Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:42:28.993Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:42:30.841Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:46:48.402Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:46:50.993Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:47:38.145Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:47:40.019Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:48:31.831Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:48:33.980Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:53:28.395Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:53:30.585Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T21:54:32.988Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T21:54:35.251Z"}
+{"level":"info","message":"Server listen on port 3000","timestamp":"2022-05-08T22:00:01.076Z"}
+{"level":"info","message":"A connection to MongoDB has been established.","timestamp":"2022-05-08T22:00:03.395Z"}

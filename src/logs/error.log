@@ -1,0 +1,203 @@
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-05T22:54:39.134Z"}
+{"level":"error","message":"bad auth : Authentication failed.","timestamp":"2022-05-05T22:54:41.030Z"}
+{"level":"error","message":"bad auth : Authentication failed.","timestamp":"2022-05-05T22:55:05.289Z"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms","timestamp":"2022-05-05T23:07:30.918Z"}
+{"level":"error","message":"bad auth : Authentication failed.","timestamp":"2022-05-05T23:08:11.463Z"}
+{"level":"error","message":"Operation `users.findOne()` buffering timed out after 10000ms","timestamp":"2022-05-05T23:08:45.091Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:23:49.841Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3001","timestamp":"2022-05-06T13:26:02.601Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:26:08.569Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3001","timestamp":"2022-05-06T13:26:12.149Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:26:18.233Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:31:11.785Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:31:58.681Z"}
+{"level":"error","message":"Cannot read property 'USER' of undefined","timestamp":"2022-05-06T13:32:28.230Z"}
+{"level":"error","message":"E11000 duplicate key error collection: coderhouse-backend.carts index: user_1 dup key: { user: null }","timestamp":"2022-05-06T14:16:04.510Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:53:24.228Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:54:43.002Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:55:09.075Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:55:16.886Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:55:29.241Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:55:49.552Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-06T16:56:44.942Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.321Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.345Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.531Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.732Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.745Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:58.912Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.081Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.096Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.423Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.437Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.593Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.841Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:56:59.859Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.156Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.185Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.349Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.555Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.568Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.733Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.959Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:00.972Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.272Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.285Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.388Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.629Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.650Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.874Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:01.886Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.180Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.214Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.381Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.598Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.608Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.740Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:02.989Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.003Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.139Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.358Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.373Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.685Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.699Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:03.903Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.134Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.167Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.439Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.451Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.578Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.787Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:04.822Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.062Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.074Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.411Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.421Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.639Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.662Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.952Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:05.969Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.191Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.202Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.470Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.479Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.697Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.708Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.969Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:06.994Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:07.155Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:07.395Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:07.414Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:07.826Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:57:07.845Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:20.954Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:20.974Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.057Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.161Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.173Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.323Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.338Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.527Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.554Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.654Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.752Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.768Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.985Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:21.998Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.078Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.233Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.244Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.419Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.497Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.510Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.633Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.806Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.822Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:22.915Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.031Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.045Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.155Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.283Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.297Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.383Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.489Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.509Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.735Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.746Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.830Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.929Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:23.940Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.049Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.148Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.160Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.275Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.372Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.381Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.512Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.523Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.650Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.768Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.777Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.885Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.983Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:24.992Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.112Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.188Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.198Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.327Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.433Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.446Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.645Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.653Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.761Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.897Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:25.910Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.015Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.113Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.122Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.245Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.327Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.345Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.459Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.534Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.544Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.670Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.776Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.785Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T16:58:26.910Z"}
+{"level":"error","message":"Product already exists.","timestamp":"2022-05-06T17:06:45.646Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T17:22:35.020Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T17:23:11.393Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T17:23:32.596Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T17:23:53.888Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"{ _id: undefined }\" (type Object) at path \"_id\" for model \"User\"","timestamp":"2022-05-06T17:24:20.087Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:24.025Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:24.211Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:24.224Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:47.122Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:47.357Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:47.367Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:49.386Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:49.680Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T17:35:49.694Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T19:35:44.768Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T19:35:45.025Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-06T19:35:45.040Z"}
+{"level":"error","message":"Error server: Error: listen EADDRINUSE: address already in use :::3000","timestamp":"2022-05-08T21:21:45.202Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:29:25.161Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:29:25.423Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:29:25.456Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:09.671Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:09.819Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:23.359Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:46.553Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:46.835Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:46.867Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:59.412Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:59.430Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:59.614Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:30:59.630Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:32:10.630Z"}
+{"level":"error","message":"Cast to ObjectId failed for value \"undefined\" (type string) at path \"_id\" for model \"Cart\"","timestamp":"2022-05-08T21:32:50.335Z"}
+{"level":"error","message":"Plan executor error during findAndModify :: caused by :: The field 'quantity' must be an array but is of type int in document {_id: ObjectId('6275518a1d4d929c469fd4ef')}","timestamp":"2022-05-08T21:59:19.109Z"}
+{"level":"error","message":"Non-existent product.","timestamp":"2022-05-08T22:11:50.681Z"}

@@ -30,8 +30,8 @@ export default class CartService {
     return cartCreated
   }
 
-  async addProduct (cartId, productId) {
-    if (!cartId || !productId) throw new Error('Missing \'cartId\' or \'productId\' parameter!')
+  async addProduct (cartId, productId, quantity) {
+    if (!cartId || !productId || !quantity) throw new Error('Missing \'cartId\', \'productId\' or \'quantity\' parameter!')
 
     const cart = await Cart.findById(cartId)
     if (!cart) throw new Error('Non-existent cart.')
@@ -42,7 +42,7 @@ export default class CartService {
     const productFound = await Cart.findById(cartId).findOne({ products: productId })
     if (productFound) throw new Error('Product already exists in cart.')
 
-    await Cart.findByIdAndUpdate(cartId, { $push: { products: product } })
+    await Cart.findByIdAndUpdate(cartId, { $push: { products: product }, quantity })
   }
 
   async getProducts (cartId) {

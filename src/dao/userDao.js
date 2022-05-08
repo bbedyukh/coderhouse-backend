@@ -11,11 +11,11 @@ export default class UserDao {
     return this.users
   }
 
-  async saveUser (firstName, lastName, email, password, username, phone, address, age, avatar) {
+  async saveUser (first_name, last_name, email, password, username, phone, address, age, profile_picture) {
 
   }
 
-  async updateUser (userId, firstName, lastName, email, password, username, phone, address, age, avatar) {
+  async updateUser (userId, first_name, last_name, email, password, username, phone, address, age, profile_picture) {
 
   }
 

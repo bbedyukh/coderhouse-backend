@@ -2,8 +2,8 @@ import { Schema, model } from 'mongoose'
 
 const CartSchema = new Schema({
   products: [{ type: Schema.Types.ObjectId, ref: 'Product' }],
-  user: { type: Schema.Types.ObjectId, ref: 'User', unique: true }
-}, { timestamps: true, versionKey: false })
+  quantity: { type: Number, default: 1 }
+}, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }, versionKey: false })
 
 const Cart = model('Cart', CartSchema)
 

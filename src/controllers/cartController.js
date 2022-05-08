@@ -7,7 +7,7 @@ export const fetchCart = (req, res) => {
   const { cartId } = req.params
   service.getCart(cartId)
     .then(cart => {
-      res.json({ cart })
+      res.json({ payload: { products: cart.products } })
     })
     .catch(err => {
       logger.error(err.message)
@@ -41,7 +41,8 @@ export const createCart = (req, res) => {
 export const addProduct = async (req, res) => {
   const cartId = req.params.cartId
   const productId = req.params.productId
-  service.addProduct(cartId, productId)
+  const { quantity } = req.body
+  service.addProduct(cartId, productId, quantity)
     .then(() => {
       res.json({ message: 'Product has been added successfully.' })
     })

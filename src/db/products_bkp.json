@@ -1,137 +1,122 @@
 [
   {
-    "name": "Final Shine",
+    "title": "Final Shine",
     "description": "Quick detailer con potenciadores de brillo, puede ser utilizado en mojado o seco, apto para remover polvillo y lubricar la clay bar.",
-    "category": "liquid waxes",
     "code": "FS500",
     "price": 530,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/zcSc1NuHP7pPUZrRipccJK.jpg"
+    "thumbnail": "http://localhost:8080/uploads/zcSc1NuHP7pPUZrRipccJK.jpg"
   },
   {
-    "name": "Sandia Wax",
+    "title": "Sandia Wax",
     "description": "Cera sintética que otorga un brillo profundo en un solo paso, de muy fácil aplicación y aroma a sandia.",
-    "category": "liquid waxes",
     "code": "SW500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Girl Wax",
+    "title": "Girl Wax",
     "description": "Cera sintética con aroma a miss dior.",
-    "category": "liquid waxes",
     "code": "GW500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Black Wax",
+    "title": "Black Wax",
     "description": "Cera líquida con alto porcentaje de carnauba especialmente diseñada para pinturas de color oscuro. Realza notablemente la profundidad del color, potencia el brillo, otorga suavidad y protección. Aroma frutos del bosque.",
-    "category": "liquid waxes",
     "code": "BW500",
     "price": 700,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "White Wax",
+    "title": "White Wax",
     "description": "Cera sintética diseñada para pinturas de colores claros potencia el brillo y otorga gran protección no solo contra agentes externos sino también contra los rayos UV. Aroma a crema americana.",
-    "category": "liquid waxes",
     "code": "WW500",
     "price": 700,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Carnauba Wax",
+    "title": "Carnauba Wax",
     "description": "Cera líquida natural a base de carnauba, otorga protección, ideal para mantenimiento de tratamientos acrílicos.",
-    "category": "liquid waxes",
     "code": "CW500",
     "price": 680,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Plastic Mate",
+    "title": "Plastic Mate",
     "description": "Acondicionador base acuosa para plásticos interiores con terminación mate, protege tu interior de los rayos UV brindando una terminación natural, seco al tacto y con agradable aroma a frutilla.",
-    "category": "conditioners",
     "code": "PM500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Plastic Gloss",
+    "title": "Plastic Gloss",
     "description": "Acondicionador base acuosa para plásticos interiores y exteriores con terminación brillosa. Posee agradable aroma a banana. Seco al tacto.",
-    "category": "conditioners",
     "code": "PG500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Coffee Cream",
+    "title": "Coffee Cream",
     "description": "Acondicionador en crema para plásticos interiores y exteriores con terminación de brillo satinado. Posee agradable aroma a café.",
-    "category": "conditioners",
     "code": "CC500",
     "price": 650,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Tyre Gloss",
+    "title": "Tyre Gloss",
     "description": "Acondicionador de neumáticos con aroma a banana, gran poder de brillo y resistente al agua.",
-    "category": "conditioners",
     "code": "TG500",
     "price": 860,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Leather Conditioner",
+    "title": "Leather Conditioner",
     "description": "Hidrata y devuelve la flexibilidad natural del cuero brindando una terminación natural y seco al tacto.",
-    "category": "conditioners",
     "code": "LC500",
     "price": 730,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Purple Berries",
+    "title": "Purple Berries",
     "description": "Acondicionador base acuosa para plásticos interiores y exteriores con terminación brillosa. Riquisimo aroma frambuesa-mora-uva. Seco al tacto.",
-    "category": "conditioners",
     "code": "PB500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Yapa Cream",
+    "title": "Yapa Cream",
     "description": "Acondicionador en crema para plásticos interiores y exteriores con terminación satinada. Posee agradable aroma a yapa. ",
-    "category": "conditioners",
     "code": "YC500",
     "price": 650,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Plastic Restorer",
+    "title": "Plastic Restorer",
     "description": "Acondicionador de plasticos exteriores con terminacion brillosa y resistencia al agua.",
-    "category": "conditioners",
     "code": "PR500",
     "price": 680,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   },
   {
-    "name": "Engine Dressing",
+    "title": "Engine Dressing",
     "description": "Acondicionador para motores, formulado a base acuosa, brinda una terminación de brillo satinado y seco al tacto. Agradable aroma a frutilla.",
-    "category": "conditioners",
     "code": "ED500",
     "price": 600,
     "stock": 100,
-    "picture": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
+    "thumbnail": "http://localhost:8080/uploads/jjpYDtEBf9VH8VFT2YWGQ.jpg"
   }
 ]
