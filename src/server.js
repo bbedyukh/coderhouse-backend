@@ -9,7 +9,6 @@ import productRouter from './routes/product.routes.js'
 import cartRouter from './routes/cart.routes.js'
 import sessionRouter from './routes/session.routes.js'
 import userRouter from './routes/user.routes.js'
-import purchaseRouter from './routes/purchase.routes.js'
 
 import notFoundHandler from './middlewares/notFoundHandler.js'
 import loggerHandler from './middlewares/loggerHandler.js'
@@ -49,7 +48,6 @@ export default class Servidor {
       })
     })
     this.app.use('/api', sessionRouter)
-    this.app.use('/api/purchases', purchaseRouter)
     this.app.use('/api/products', productRouter)
     this.app.use('/api/carts', cartRouter)
     this.app.use('/api/users', userRouter)
@@ -86,9 +84,7 @@ export default class Servidor {
     io.on('connection', async socket => {
       console.log('client connected')
       if (socket.handshake.query.name) {
-        // Check if there's an associated id with socketId
         if (Object.values(connectedSockets).some(user => user.id === socket.handshake.query.id)) {
-          // replace socket id for current connected socket
           Object.keys(connectedSockets).forEach(idSocket => {
             if (connectedSockets[idSocket].id === socket.handshake.query.id) {
               delete connectedSockets[idSocket]
@@ -110,7 +106,6 @@ export default class Servidor {
       io.emit('users', connectedSockets)
       const logs = await messageService.getMessages()
       io.emit('logs', logs)
-      // Other listeners
       socket.on('disconnect', reason => {
         delete connectedSockets[socket.id]
       })

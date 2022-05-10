@@ -5,7 +5,7 @@ import uploadService from '../services/uploadService.js'
 
 const sessionRouter = Router()
 
-sessionRouter.post('/register', uploadService.single('profile_picture'), passportCall('register'), register)
+sessionRouter.post('/register', uploadService.single('profilePic'), passportCall('register'), register)
 
 sessionRouter.post('/login', passportCall('login'), login)
 

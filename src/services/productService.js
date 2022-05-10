@@ -25,8 +25,7 @@ export default class ProductService {
     stock = parseInt(stock)
     price = parseInt(price)
 
-    const createdProduct = await Product.create({ title, description, code, thumbnail, price, stock })
-    return createdProduct
+    await Product.create({ title, description, code, thumbnail, price, stock })
   }
 
   async updateProductById (productId, body) {
@@ -41,8 +40,7 @@ export default class ProductService {
     body.stock = parseInt(body.stock)
     body.price = parseInt(body.price)
 
-    const updatedProduct = await Product.findByIdAndUpdate(productId, body, { new: true })
-    return updatedProduct
+    await Product.findByIdAndUpdate(productId, body, { new: true })
   }
 
   async deleteProductById (productId) {

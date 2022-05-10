@@ -12,12 +12,12 @@ export const createProduct = async (req, res) => {
     thumbnail = `${req.protocol}://${req.hostname}:${PORT}/uploads/${file.filename}`
   }
   service.createProduct(title, description, code, thumbnail, price, stock)
-    .then(product => {
-      res.json({ status: 'success', payload: product })
+    .then(() => {
+      res.json({ status: 'success', message: 'Product added' })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -28,7 +28,7 @@ export const getProducts = async (req, res) => {
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -40,7 +40,7 @@ export const getProduct = async (req, res) => {
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -52,12 +52,12 @@ export const updateProduct = async (req, res) => {
     product.thumbnail = `${req.protocol}://${req.hostname}:${process.env.PORT}/uploads/${file.filename}`
   }
   service.updateProductById(productId, product)
-    .then(product => {
-      res.json({ status: 'success', payload: product })
+    .then(() => {
+      res.json({ status: 'success', message: 'Product updated' })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -65,10 +65,10 @@ export const deleteProduct = async (req, res) => {
   const productId = req.params.id
   service.deleteProductById(productId)
     .then(() => {
-      res.sendStatus(204)
+      res.send({ status: 'success', message: 'Product deleted' })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }

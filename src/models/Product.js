@@ -6,7 +6,8 @@ const ProductSchema = new Schema({
   price: { type: Number, required: true },
   code: { type: String, required: true, unique: true },
   stock: { type: Number, required: true },
-  thumbnail: { type: String, required: true }
+  thumbnail: { type: String, required: true },
+  status: { type: String, default: 'available' }
 }, { timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' }, versionKey: false })
 
 const Product = model('Product', ProductSchema)

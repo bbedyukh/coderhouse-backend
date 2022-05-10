@@ -7,11 +7,11 @@ export const fetchCart = (req, res) => {
   const { cartId } = req.params
   service.getCart(cartId)
     .then(cart => {
-      res.json({ payload: { products: cart.products } })
+      res.json({ status: 'success', payload: cart })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -22,7 +22,7 @@ export const fetchCarts = (req, res) => {
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -34,7 +34,7 @@ export const createCart = (req, res) => {
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -43,12 +43,12 @@ export const addProduct = async (req, res) => {
   const productId = req.params.productId
   const { quantity } = req.body
   service.addProduct(cartId, productId, quantity)
-    .then(() => {
-      res.json({ message: 'Product has been added successfully.' })
+    .then(result => {
+      res.json({ status: 'success', quantityChanged: result.quantityChanged, newQuantity: result.quantity, message: 'Product has been added successfully.' })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -60,7 +60,7 @@ export const fetchProducts = async (req, res) => {
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -69,11 +69,11 @@ export const deleteProduct = async (req, res) => {
   const productId = req.params.productId
   service.deleteProduct(cartId, productId)
     .then(() => {
-      res.sendStatus(204)
+      res.send({ status: 'success', message: 'Product deleted' })
     })
     .catch(err => {
       logger.error(err.message)
-      res.status(500).json({ message: err.message })
+      res.status(400).json({ message: err.message })
     })
 }
 
@@ -82,6 +82,31 @@ export const deleteCart = async (req, res) => {
   service.deleteCart(cartId)
     .then(() => {
       res.sendStatus(204)
+    })
+    .catch(err => {
+      logger.error(err.message)
+      res.status(400).json({ message: err.message })
+    })
+}
+
+export const updateCart = async (req, res) => {
+  const { cartId } = req.params
+  const { products } = req.body
+  service.updateCart(cartId, products)
+    .then(result => {
+      res.send({ status: 'success', stockLimitation: result.stockLimitation })
+    })
+    .catch(err => {
+      logger.error(err.message)
+      res.status(400).json({ message: err.message })
+    })
+}
+
+export const confirmPurchase = async (req, res) => {
+  const { cartId } = req.params
+  service.confirmPurchase(cartId)
+    .then(() => {
+      res.send({ status: 'success', message: 'Finished purchase!' })
     })
     .catch(err => {
       logger.error(err.message)

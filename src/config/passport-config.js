@@ -5,9 +5,8 @@ import { JWT, PORT } from './config.js'
 import User from '../models/User.js'
 import { cookieExtractor } from '../utils.js'
 import loggerHandler from '../middlewares/loggerHandler.js'
-import CartService from '../services/cartService.js'
+import Cart from '../models/Cart.js'
 
-const cartService = new CartService()
 const logger = loggerHandler()
 
 const LocalStrategy = local.Strategy
@@ -18,12 +17,13 @@ const initializePassport = () => {
   passport.use('register', new LocalStrategy({ passReqToCallback: true, usernameField: 'email', session: false }, async (req, username, password, done) => {
     try {
       const { first_name, last_name, email, phone } = req.body
+
       if (!req.file) return done(null, false, { message: 'Couldn\'t upload avatar.' })
 
       const userFound = await User.findOne({ email })
       if (userFound) return done(null, false, { message: 'User already exists.' })
 
-      const cart = await cartService.createCart({ products: [] })
+      const cart = await Cart.create({ products: [] })
 
       const newUser = new User({
         first_name,
@@ -65,7 +65,7 @@ const initializePassport = () => {
       const user = await User.findById({ _id: jwtPayload._id })
       if (!user) return done(null, false, { message: 'User not found.' })
 
-      return done(null, JSON.parse(JSON.stringify(user)))
+      return done(null, user)
     } catch (err) {
       logger.error(err.message)
       return done(err)

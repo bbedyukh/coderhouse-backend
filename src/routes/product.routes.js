@@ -4,14 +4,10 @@ import uploadService from '../services/uploadService.js'
 
 const productRouter = Router()
 
-productRouter.post('/', uploadService.single('thumbnail'), createProduct)
-
 productRouter.get('/', getProducts)
-
-productRouter.get('/:id', getProduct)
-
+productRouter.post('/', uploadService.single('thumbnail'), createProduct)
 productRouter.put('/:id', uploadService.single('thumbnail'), updateProduct)
-
 productRouter.delete('/:id', deleteProduct)
+productRouter.get('/:id', getProduct)
 
 export default productRouter

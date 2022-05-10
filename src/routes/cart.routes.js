@@ -1,19 +1,16 @@
 import { Router } from 'express'
-import { fetchCarts, createCart, addProduct, fetchProducts, deleteProduct, deleteCart, fetchCart } from '../controllers/cartController.js'
+import { updateCart, fetchCarts, createCart, addProduct, fetchProducts, deleteProduct, deleteCart, fetchCart, confirmPurchase } from '../controllers/cartController.js'
 const cartRouter = Router()
 
+cartRouter.post('/purchase/:cartId', confirmPurchase)
 cartRouter.get('/:cartId', fetchCart)
-
-cartRouter.get('/', fetchCarts)
-
-cartRouter.post('/', createCart)
-
+cartRouter.put('/:cartId/', updateCart)
 cartRouter.post('/:cartId/products/:productId', addProduct)
-
-cartRouter.get('/:cartId/products', fetchProducts)
-
 cartRouter.delete('/:cartId/products/:productId', deleteProduct)
 
+cartRouter.get('/', fetchCarts)
+cartRouter.post('/', createCart)
+cartRouter.get('/:cartId/products', fetchProducts)
 cartRouter.delete('/:cartId', deleteCart)
 
 export default cartRouter
