@@ -29,7 +29,7 @@ export default class Servidor {
   }
 
   middlewares () {
-    this.app.use(cors({ credentials: true, origin: 'http://localhost:3001' }))
+    this.app.use(cors({ credentials: true, origin: 'http://localhost:3000' }))
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(cookieParser())
@@ -75,7 +75,7 @@ export default class Servidor {
 
     const io = new Server(server, {
       cors: {
-        origin: 'http://localhost:3001',
+        origin: 'http://localhost:3000',
         methods: ['GET', 'POST']
       }
     })
