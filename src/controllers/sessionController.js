@@ -17,11 +17,11 @@ export const login = (req, res) => {
 
   res.cookie(JWT.COOKIE, token, {
     httpOnly: true,
-    maxAge: 60 * 60 * 1000
+    maxAge: JWT.EXPIRES
   })
 
   res.cookie('sessionCookie', 'boom', {
-    maxAge: 60 * 60 * 1000
+    maxAge: JWT.EXPIRES
   })
 
   res.send({ status: 'success', payload: { user } })

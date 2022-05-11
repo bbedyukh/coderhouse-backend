@@ -110,11 +110,8 @@ export default class CartService {
           await Product.findByIdAndUpdate(product._id, product)
         } else {
           const difference = associatedProductInInput.quantity - associatedProductInCart.quantity
-          console.log('difference', difference)
           if (product.stock >= difference) {
-            console.log('product.stock >= difference', product.stock >= difference)
             product.stock -= difference
-            console.log('product.stock', product.stock)
             await Product.findByIdAndUpdate(product._id, product)
             associatedProductInCart.quantity = associatedProductInInput.quantity
           } else {
@@ -125,7 +122,7 @@ export default class CartService {
           }
         }
       } else {
-        console.log('La cantidad para este producto no cambió')
+        console.log('La cantidad para este producto no cambió.')
       }
     }
     await Cart.findByIdAndUpdate(cartId, cart)

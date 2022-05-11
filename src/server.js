@@ -82,7 +82,7 @@ export default class Servidor {
 
     const connectedSockets = {}
     io.on('connection', async socket => {
-      console.log('client connected')
+      console.log('Client connected.')
       if (socket.handshake.query.name) {
         if (Object.values(connectedSockets).some(user => user.id === socket.handshake.query.id)) {
           Object.keys(connectedSockets).forEach(idSocket => {
@@ -111,8 +111,6 @@ export default class Servidor {
       })
       socket.on('message', async data => {
         if (Object.keys(connectedSockets).includes(socket.id)) {
-          console.log('DATA', data)
-          console.log('connectedSockets', connectedSockets)
           await messageService.save({
             author: connectedSockets[socket.id].id,
             content: data
